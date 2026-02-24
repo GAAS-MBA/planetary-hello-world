@@ -47,8 +47,6 @@
 
 ## 3. 黄金の瞬間 (Golden Moment) の確保
 
-[2026/02/13 記事参照]
-
 ### 外部刺激の遮断
 
 - 起動直後の脳波が安定している間に、**スマホ・通知・メール**を遮断
@@ -126,7 +124,7 @@
 
 ## 7. 次のステップ
 
-キャリブレーション完了後、[gravity-leverage-logic.md](../core-engine/gravity-leverage-logic.md) に進む。
+キャリブレーション完了後、[body-hardware-software-ontology.md](../core-engine/body-hardware-software-ontology.md) に進む。
 
 ---
 

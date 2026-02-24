@@ -41,11 +41,16 @@
 planetary-movement-mba/
 ├── boot-sector/           # 起動直後のキャリブレーション
 │   └── initial-calibration.md
-├── core-engine/           # 運動の物理
+├── core-engine/           # 運動の物理・エネルギー制約・存在論
+│   ├── body-hardware-software-ontology.md
+│   ├── dissipative-structure-ontology.md
+│   ├── maxwell-demon-recovery-ontology.md
 │   ├── gravity-leverage-logic.md
-│   └── muscle-bone-balancing.md
+│   ├── muscle-bone-balancing.md
+│   └── performance-energy-limits.md
 ├── interfaces/            # 入出力インターフェース
 │   ├── materialization-protocol.md
+│   ├── 30-minute-punch-protocol.md
 │   └── environment-sync-earth.md
 ├── safety-maintenance/    # エラーハンドリング・持続可能な運用
 │   └── breaking-update-protocol.md
@@ -57,25 +62,25 @@ planetary-movement-mba/
 ### 起動シーケンス（推奨順序）
 
 1. [initial-calibration.md](boot-sector/initial-calibration.md) — 起床時の調整手順
-2. [gravity-leverage-logic.md](core-engine/gravity-leverage-logic.md) — 重力利用の物理
-3. [muscle-bone-balancing.md](core-engine/muscle-bone-balancing.md) — 骨格支持の最適化
-4. [materialization-protocol.md](interfaces/materialization-protocol.md) — 具現化・出力の手順
-5. [environment-sync-earth.md](interfaces/environment-sync-earth.md) — 地球環境1Gへの同調
+2. [body-hardware-software-ontology.md](core-engine/body-hardware-software-ontology.md) — 肉体・ソフトウェア・OSの関係性
+3. [gravity-leverage-logic.md](core-engine/gravity-leverage-logic.md) — 重力利用の物理
+4. [muscle-bone-balancing.md](core-engine/muscle-bone-balancing.md) — 骨格支持の最適化
+5. [performance-energy-limits.md](core-engine/performance-energy-limits.md) — 2時間限界説・多相性サイクル
+6. [materialization-protocol.md](interfaces/materialization-protocol.md) — 具現化・出力の手順
+7. [environment-sync-earth.md](interfaces/environment-sync-earth.md) — 地球環境1Gへの同調
+
+### 推奨トレーニング
+
+- [30-minute-punch-protocol.md](interfaces/30-minute-punch-protocol.md) — 90秒+60秒×12セットで1000発パンチ。人類頂点を30分に凝縮する最も経済的なレバレッジ
+
+### 理論的深化（オプション）
+
+- [dissipative-structure-ontology.md](core-engine/dissipative-structure-ontology.md) — 散逸構造理論。頂点捕食者のポジショニング、重力の中心をうろちょろする営業、系外部からのエネルギー回収
+- [maxwell-demon-recovery-ontology.md](core-engine/maxwell-demon-recovery-ontology.md) — 肉体の回復とマクスウェルの悪魔。ランダウアーの熱、忘却のコスト、回復動力の役割
 
 ### エラー発生時
 
 - [breaking-update-protocol.md](safety-maintenance/breaking-update-protocol.md) — 破壊的アップデート時の対応（出力を弱くし、脳にキャリブレーション学習をさせる）
-
----
-
-## 参照
-
-- [体をゆるめるMBA](https://www.tanaakk.com/) v1.8
-- [Golden Moment](https://www.tanaakk.com/2026/02/13/golden-moment/) (2026/02/13)
-- [Operating Leverage 3](https://www.tanaakk.com/2026/02/11/operating-leverage-3/) (2026/02/11)
-- [Operating Leverage 4](https://www.tanaakk.com/2026/02/12/operating-leverage-4/) (2026/02/12)
-- [Master of Materialization 3](https://www.tanaakk.com/2026/02/23/master-of-materialization-3/) (2026/02/23)
-- [Update](https://www.tanaakk.com/2026/02/24/update/) (2026/02/24)
 
 ---
 

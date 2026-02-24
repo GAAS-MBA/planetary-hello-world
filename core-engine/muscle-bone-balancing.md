@@ -114,7 +114,7 @@
 
 ## 6. 次のステップ
 
-[materialization-protocol.md](../interfaces/materialization-protocol.md) に進む。
+[performance-energy-limits.md](performance-energy-limits.md) に進む。
 
 ---
 

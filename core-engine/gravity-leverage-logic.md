@@ -1,7 +1,6 @@
 # Gravity Leverage Logic：重力利用の物理式
 
-> Operating Leverage — 労働（筋力）を資本（骨格・重力）に置き換えるプロセス  
-> [2026/02/11 & 12 記事参照]
+> Operating Leverage — 労働（筋力）を資本（骨格・重力）に置き換えるプロセス
 
 ---
 
@@ -73,7 +72,11 @@ $F_{ext}$（外力としての床反力）を**内部エネルギーとしてバ
 
 ---
 
-## 5. 次のステップ
+## 5. 前提（オプション）
+
+肉体・ソフトウェア・OSの関係性については [body-hardware-software-ontology.md](body-hardware-software-ontology.md) を参照。
+
+## 6. 次のステップ
 
 [muscle-bone-balancing.md](muscle-bone-balancing.md) に進む。
 

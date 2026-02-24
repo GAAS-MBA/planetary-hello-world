@@ -76,11 +76,4 @@
 
 ---
 
-## 5. 参照
-
-- [MBA-model-1 地球重力圏マニュアル](https://github.com/tanaakk/MBA-model-1)
-- [普遍的な惑星生命の操作方法](https://github.com/tanaakk/MBA-model-1/blob/main/docs/universal/planetary-life-operations.md)
-
----
-
 *planetary-life-os-earth-1g | Standard Operating Procedures for Planetary Life*
