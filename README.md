@@ -1,7 +1,7 @@
-# planetary-life-os-earth-1g
+# planetary-movement-mba
 
-**Standard Operating Procedures for Planetary Life**  
-地球重力圏（1G）における惑星生命操作標準
+**Muscle and Bone Academy Model 1**  
+**Standard Operating Procedures for Planetary Life** — 地球重力圏（1G）における惑星生命操作標準
 
 ---
 
@@ -26,7 +26,7 @@
 ## ドキュメント構成
 
 ```
-planetary-life-os-earth-1g/
+planetary-movement-mba/
 ├── boot-sector/           # 起動直後のキャリブレーション
 │   └── initial-calibration.md
 ├── core-engine/           # 運動の物理
@@ -58,7 +58,6 @@ planetary-life-os-earth-1g/
 
 ## 参照
 
-- [MBA-model-1](https://github.com/tanaakk/MBA-model-1) — Muscle and Bone Academy Model 1
 - [体をゆるめるMBA](https://www.tanaakk.com/) v1.8
 - [Golden Moment](https://www.tanaakk.com/2026/02/13/golden-moment/) (2026/02/13)
 - [Operating Leverage 3](https://www.tanaakk.com/2026/02/11/operating-leverage-3/) (2026/02/11)
