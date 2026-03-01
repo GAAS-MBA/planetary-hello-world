@@ -43,6 +43,8 @@ planetary-movement-mba/
 │   └── initial-calibration.md
 ├── core-engine/           # 運動の物理・エネルギー制約・存在論
 │   ├── body-hardware-software-ontology.md
+│   ├── hello-world-typo-ontology.md
+│   ├── typo-root-solution-framework.md
 │   ├── dissipative-structure-ontology.md
 │   ├── maxwell-demon-recovery-ontology.md
 │   ├── gravity-leverage-logic.md
@@ -52,6 +54,13 @@ planetary-movement-mba/
 │   ├── materialization-protocol.md
 │   ├── 30-minute-punch-protocol.md
 │   └── environment-sync-earth.md
+├── references/            # 権威ある参照元（外部参照の量と質が価値を決める）
+│   ├── README.md
+│   ├── institutions.md
+│   ├── decode-reconstruct-institutions.md
+│   ├── pathology-as-bugs.md
+│   ├── authors.md
+│   └── domains.md
 ├── safety-maintenance/    # エラーハンドリング・持続可能な運用
 │   └── breaking-update-protocol.md
 ├── logs/                  # アップデート履歴
@@ -75,8 +84,19 @@ planetary-movement-mba/
 
 ### 理論的深化（オプション）
 
+- [typo-root-solution-framework.md](core-engine/typo-root-solution-framework.md) — 誤字脱字の原因と根本解決フレームワーク。記憶依存、多次元圧縮、API参照、規則性検証
+- [hello-world-typo-ontology.md](core-engine/hello-world-typo-ontology.md) — 誤字脱字の存在論（詳細）。Hello World 例、3人チェック現象、裁判官指摘の事前防止
 - [dissipative-structure-ontology.md](core-engine/dissipative-structure-ontology.md) — 散逸構造理論。頂点捕食者のポジショニング、重力の中心をうろちょろする営業、系外部からのエネルギー回収
 - [maxwell-demon-recovery-ontology.md](core-engine/maxwell-demon-recovery-ontology.md) — 肉体の回復とマクスウェルの悪魔。ランダウアーの熱、忘却のコスト、回復動力の役割
+
+### 参照元（外部参照の量と質が価値を決める）
+
+- [references/README.md](references/README.md) — 参照元インデックス
+- [references/institutions.md](references/institutions.md) — 機関（NSCA、ACSM、日本スポーツ協会等）
+- [references/decode-reconstruct-institutions.md](references/decode-reconstruct-institutions.md) — 脳・筋肉・臓器・DNA・RNA・クローンをデコード・再構築する機関・人物（権威順）
+- [references/pathology-as-bugs.md](references/pathology-as-bugs.md) — 人類のバグ：主な病理のカテゴライズと権威ある参照（ICD-11準拠）
+- [references/authors.md](references/authors.md) — 著者（ペンフィールド、プリゴジン、ランダウアー、ツァイガルニク等）
+- [references/domains.md](references/domains.md) — 分野・領域（バイオメカニクス、解剖学、熱力学等）
 
 ### エラー発生時
 
