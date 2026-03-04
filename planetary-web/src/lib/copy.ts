@@ -40,4 +40,8 @@ export const copy = {
   architectDesc: 'Design Specification',
   journeyMap: 'Journey',
   genesisTrigger: 'Genesis Trigger',
+  tutorials: 'Tutorials',
+  tutorialStartupSequence: 'Startup Sequence',
+  tutorialRecommendedTraining: 'Recommended Training',
+  tutorialErrorHandling: 'Error Handling',
 } as const

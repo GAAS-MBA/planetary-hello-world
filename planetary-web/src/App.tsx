@@ -13,6 +13,9 @@ import { TimeOrbitCalibration } from './pages/TimeOrbitCalibration'
 import { CivilCalibration } from './pages/CivilCalibration'
 import { JourneyMap } from './pages/JourneyMap'
 import { GenesisTrigger } from './pages/GenesisTrigger'
+import { TutorialStartupSequence } from './pages/TutorialStartupSequence'
+import { TutorialRecommendedTraining } from './pages/TutorialRecommendedTraining'
+import { TutorialErrorHandling } from './pages/TutorialErrorHandling'
 
 const AppLayout: Component<RouteSectionProps> = (props) => {
   const [sidebarOpen, setSidebarOpen] = createSignal(false)
@@ -44,6 +47,9 @@ export default function App() {
       <Route path="/civil" component={CivilCalibration} />
       <Route path="/journey" component={JourneyMap} />
       <Route path="/genesis-trigger" component={GenesisTrigger} />
+      <Route path="/tutorials/startup-sequence" component={TutorialStartupSequence} />
+      <Route path="/tutorials/recommended-training" component={TutorialRecommendedTraining} />
+      <Route path="/tutorials/error-handling" component={TutorialErrorHandling} />
     </HashRouter>
   )
 }
