@@ -1,0 +1,33 @@
+{
+  "name": "planetary-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npx tsx scripts/record-update.ts && tsc -b && vite build",
+    "record-update": "npx tsx scripts/record-update.ts",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@solidjs/router": "^0.15.4",
+    "@tailwindcss/vite": "^4.2.1",
+    "dotenv": "^17.3.1",
+    "geo-tz": "^8.1.5",
+    "leaflet": "^1.9.4",
+    "lucide-solid": "^0.577.0",
+    "scrypt-js": "^3.0.1",
+    "solid-js": "^1.9.10",
+    "tailwindcss": "^4.2.1",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.21",
+    "@types/node": "^24.10.1",
+    "@types/uuid": "^10.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-solid": "^2.11.10"
+  }
+}

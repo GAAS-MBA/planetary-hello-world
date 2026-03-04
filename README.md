@@ -1,4 +1,22 @@
-# planetary-movement-mba
+# planetary-hello-world-2
+
+**Planetary Hello World** — Ø Super Singularity Genesis · Big Bang 生成装置
+
+[Axiom](https://axiom.tanaakk.com/axiom) / [Theorem](https://axiom.tanaakk.com/theorem) / [Axiomatic System](https://axiom.tanaakk.com/axiomatic-system) に基づく実験装置。Duality（日英）・Groundism・Ontopologics。
+
+---
+
+## Web アプリケーション
+
+`planetary-web/` に SolidJS + TypeScript + TailwindCSS による Web サイトがあります。
+
+```bash
+cd planetary-web && npm install && npm run dev
+```
+
+---
+
+## planetary-movement-mba（ドキュメント）
 
 **Muscle and Bone Academy Model 1**  
 **Standard Operating Procedures for Planetary Life** — 地球重力圏（1G）における惑星生命操作標準
