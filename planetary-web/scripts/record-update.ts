@@ -162,15 +162,26 @@ function main(): void {
   }
 
   // Public journey: UUIDv4 + coordinates (no secret required)
-  if (location) {
+  // When version bumps: add Genesis Trigger (use location from env, or reuse last entry's location)
+  const locToUse = location ?? (() => {
+    const last = publicJourney.entries[publicJourney.entries.length - 1]
+    return last?.lat != null && last?.lon != null
+      ? { lat: last.lat, lon: last.lon, alt: last.alt }
+      : null
+  })()
+
+  if (locToUse) {
     const commitTimestamp = getCommitTimestamp()
-    const timezone = getTimezone(location.lat, location.lon)
+    const timezone = getTimezone(locToUse.lat, locToUse.lon)
     const commitCount = getCommitCount(commitHash)
-    publicJourney.entries.push({
-      id: randomUUID(),
-      lat: location.lat,
-      lon: location.lon,
-      ...(location.alt != null && { alt: location.alt }),
+    // Only add if this commit is not already recorded
+    const alreadyRecorded = publicJourney.entries.some((e) => e.commitHash === commitHash)
+    if (!alreadyRecorded) {
+      publicJourney.entries.push({
+        id: randomUUID(),
+        lat: locToUse.lat,
+        lon: locToUse.lon,
+      ...(locToUse.alt != null && { alt: locToUse.alt }),
       version,
       commitHash,
       timestamp,
@@ -178,13 +189,14 @@ function main(): void {
       ...(timezone != null && { timezone }),
       ...(commitCount != null && { commitCount }),
     })
-    modified = true
+      modified = true
+    }
   }
 
   if (modified) {
     writeFileSync(publicPath, JSON.stringify(publicJourney, null, 0) + '\n')
-    if (location) {
-      console.log(`Journey public: +1 (${location.lat.toFixed(4)}, ${location.lon.toFixed(4)})`)
+    if (locToUse) {
+      console.log(`Journey public: +1 (${locToUse.lat.toFixed(4)}, ${locToUse.lon.toFixed(4)})`)
     }
   }
 

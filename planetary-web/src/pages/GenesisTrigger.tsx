@@ -59,7 +59,6 @@ export const GenesisTrigger: Component = () => {
     <div class="space-y-6">
       <div>
         <h1 class="font-mono text-xl font-bold text-amber-600">{copy.genesisTrigger}</h1>
-        <p class="mt-1 text-sm text-stone-500">UUIDv4 identifier, coordinates (ISO 6709, SI), time (ISO 8601)</p>
       </div>
 
       {points().length > 0 ? (
@@ -69,7 +68,7 @@ export const GenesisTrigger: Component = () => {
             {copy.genesisTrigger}
           </h2>
           <p class="mt-1 text-xs text-stone-500">
-            Times follow ISO 8601.
+            UUIDv4 (ISO/IEC 9834-8), coordinates (ISO 6709, SI), version (SemVer), time (ISO 8601)
           </p>
           <ul class="mt-3 space-y-3 text-sm text-stone-600">
             {points().map((p, i) => (
@@ -89,10 +88,7 @@ export const GenesisTrigger: Component = () => {
                     <span class="font-mono text-stone-500">alt: {p.alt} m</span>
                   )}
                 </div>
-                <div class="mt-1 text-xs text-stone-500">
-                  {p.timestamp}
-                </div>
-                <div class="mt-0.5 text-xs text-stone-500 font-mono">
+                <div class="mt-1 text-xs text-stone-500 font-mono">
                   Version: v{p.version} · Commit: {p.commitHash}
                   {p.commitTimestamp && (
                     <span class="text-stone-400"> · {formatCommitTimeLocal(p.commitTimestamp, p.timezone)}</span>
