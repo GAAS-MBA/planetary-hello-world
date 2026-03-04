@@ -25,8 +25,6 @@ export const Header: Component<HeaderProps> = (props) => (
       >
         {copy.title}
       </A>
-      <span class="hidden text-stone-500 md:inline">—</span>
-      <span class="hidden text-sm text-stone-500 md:inline">{copy.subtitle}</span>
     </div>
   </header>
 )

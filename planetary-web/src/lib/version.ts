@@ -6,15 +6,9 @@
  * Update metadata: 位置・時刻は暗号化され version と共に格納（外部非公開）
  */
 import { v4 as uuidv4 } from 'uuid'
+import updateMetaJson from './update-metadata.json'
 
 declare const __COMMIT_HASH__: string
-
-export const VERSION = '1.0.0'
-export const COMMIT_HASH = typeof __COMMIT_HASH__ !== 'undefined' ? __COMMIT_HASH__ : 'dev'
-export const VERSION_DISPLAY = `v${VERSION}-${COMMIT_HASH}`
-
-/** Generate UUIDv4 for Axiomatic boundary events (x, x+1 transitions) */
-export const generateAxiomaticId = (): string => uuidv4()
 
 /** Update metadata (encrypted location/time stored with version - never exposed) */
 export interface UpdateMetadataStored {
@@ -23,9 +17,13 @@ export interface UpdateMetadataStored {
   encrypted: string | null
 }
 
-import updateMetaJson from './update-metadata.json'
-
 export const updateMetadata: UpdateMetadataStored = updateMetaJson as UpdateMetadataStored
+export const COMMIT_HASH = typeof __COMMIT_HASH__ !== 'undefined' ? __COMMIT_HASH__ : 'dev'
+export const VERSION = updateMetadata.version
+export const VERSION_DISPLAY = `v${VERSION}-${COMMIT_HASH}`
+
+/** Generate UUIDv4 for Axiomatic boundary events (x, x+1 transitions) */
+export const generateAxiomaticId = (): string => uuidv4()
 
 /** Whether encrypted location/time was stored (content never exposed) */
 export const hasEncryptedUpdateMetadata = (): boolean =>

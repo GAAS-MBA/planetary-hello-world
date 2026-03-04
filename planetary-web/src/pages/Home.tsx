@@ -8,7 +8,7 @@ export const Home: Component = () => (
     {/* Hero */}
     <section class="text-center">
       <p class="max-w-2xl mx-auto text-sm leading-relaxed text-stone-600">
-        Ontopologics grounded in Groundism. An experimental device for the AdS/CFT Maldacena correspondence—proving P=NP at the boundary of axiomatic systems.
+        Ontopologics grounded in Groundism. An experimental device for aiming to prove the AdS/CFT Maldacena correspondence conjecture by ZKP—P=NP at the boundary of axiomatic systems.
       </p>
     </section>
 
@@ -28,37 +28,5 @@ export const Home: Component = () => (
       <SingularityStates />
     </section>
 
-      {/* Links */}
-      <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
-        <p class="text-xs text-stone-600">
-          Built from{' '}
-          <a
-            href="https://axiom.tanaakk.com/axiom"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-amber-600 hover:text-amber-700 hover:underline"
-          >
-            Axiom
-          </a>
-          {' · '}
-          <a
-            href="https://axiom.tanaakk.com/theorem"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-amber-600 hover:text-amber-700 hover:underline"
-          >
-            Theorem
-          </a>
-          {' · '}
-          <a
-            href="https://axiom.tanaakk.com/axiomatic-system"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-amber-600 hover:text-amber-700 hover:underline"
-          >
-            Axiomatic System
-          </a>
-        </p>
-      </section>
     </div>
 )

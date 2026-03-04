@@ -1,11 +1,9 @@
 import { type Component } from 'solid-js'
 import { A } from '@solidjs/router'
-import { X, BookOpen, FileCode, Network, Lock, Globe, Orbit, Clock, Home, FileText, Map } from 'lucide-solid'
+import { X, BookOpen, FileCode, Network, Lock, Globe, Orbit, Clock, Home, FileText, Map, Zap } from 'lucide-solid'
 import { copy } from '../lib/copy'
 import { VERSION_DISPLAY, hasEncryptedUpdateMetadata } from '../lib/version'
 
-const AXIOM_URL = 'https://axiom.tanaakk.com/axiom'
-const AXIOMATIC_SYSTEM_URL = 'https://axiom.tanaakk.com/axiomatic-system'
 
 interface SidebarProps {
   open: boolean
@@ -30,8 +28,10 @@ export const Sidebar: Component<SidebarProps> = (props) => {
           props.open ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        <div class="flex h-14 items-center justify-between border-b border-stone-200 px-4 md:justify-end">
-          <span class="font-mono text-sm text-stone-500 md:hidden">{copy.archivesOfAxiom}</span>
+        <div class="flex h-14 min-h-14 items-center justify-between border-b border-stone-200 px-4">
+          <div>
+            <p class="font-mono text-sm font-medium text-amber-600">{copy.title}</p>
+          </div>
           <button
             type="button"
             class="rounded-lg p-2 text-stone-600 hover:bg-stone-100 hover:text-stone-900 md:hidden"
@@ -43,12 +43,24 @@ export const Sidebar: Component<SidebarProps> = (props) => {
         </div>
 
         <nav class="flex-1 overflow-y-auto p-4">
-          {/* MatterVerse Calibration */}
+          {/* About PHW */}
           <div class="mb-4">
             <p class="mb-2 px-2 text-[10px] font-medium uppercase tracking-wider text-stone-400">
-              {copy.matterVerse}
+              {copy.aboutPhw}
             </p>
             <ul class="space-y-1">
+              <li>
+                <A
+                  href="/"
+                  onClick={props.onClose}
+                  class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
+                  activeClass="bg-stone-100 text-amber-600"
+                  end
+                >
+                  <Home size={18} class="shrink-0" />
+                  <span>{copy.top}</span>
+                </A>
+              </li>
               <li>
                 <A
                   href="/architect"
@@ -60,18 +72,15 @@ export const Sidebar: Component<SidebarProps> = (props) => {
                   <span>{copy.architect}</span>
                 </A>
               </li>
-              <li>
-                <A
-                  href="/"
-                  onClick={props.onClose}
-                  class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
-                  activeClass="bg-stone-100 text-amber-600"
-                  end
-                >
-                  <Home size={18} class="shrink-0" />
-                  <span>{copy.title}</span>
-                </A>
-              </li>
+            </ul>
+          </div>
+
+          {/* MatterVerse Calibration */}
+          <div class="mb-4">
+            <p class="mb-2 px-2 text-[10px] font-medium uppercase tracking-wider text-stone-400">
+              {copy.matterVerse}
+            </p>
+            <ul class="space-y-1">
               <li>
                 <A
                   href="/space"
@@ -116,25 +125,36 @@ export const Sidebar: Component<SidebarProps> = (props) => {
                   <span>{copy.journeyMap}</span>
                 </A>
               </li>
+              <li>
+                <A
+                  href="/genesis-trigger"
+                  onClick={props.onClose}
+                  class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
+                  activeClass="bg-stone-100 text-amber-600"
+                >
+                  <Zap size={18} class="shrink-0" />
+                  <span>{copy.genesisTrigger}</span>
+                </A>
+              </li>
             </ul>
           </div>
 
           {/* Archives of Axiom */}
-          <div>
+          <div class="mb-4">
             <p class="mb-2 px-2 text-[10px] font-medium uppercase tracking-wider text-stone-400">
               {copy.archivesOfAxiom}
             </p>
             <ul class="space-y-1">
               <li>
-                <a
-                  href={AXIOM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <A
+                  href="/axiom"
+                  onClick={props.onClose}
                   class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
+                  activeClass="bg-stone-100 text-amber-600"
                 >
                   <BookOpen size={18} class="shrink-0" />
                   <span>{copy.axiom}</span>
-                </a>
+                </A>
               </li>
               <li>
                 <A
@@ -148,15 +168,15 @@ export const Sidebar: Component<SidebarProps> = (props) => {
                 </A>
               </li>
               <li>
-                <a
-                  href={AXIOMATIC_SYSTEM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <A
+                  href="/axiomatic-system"
+                  onClick={props.onClose}
                   class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
+                  activeClass="bg-stone-100 text-amber-600"
                 >
                   <Network size={18} class="shrink-0" />
                   <span>{copy.axiomaticSystem}</span>
-                </a>
+                </A>
               </li>
             </ul>
           </div>
@@ -175,6 +195,9 @@ export const Sidebar: Component<SidebarProps> = (props) => {
           )}
           <p class="mt-1 text-xs text-stone-500">
             © Planetary Hello World
+          </p>
+          <p class="mt-0.5 text-[10px] text-stone-400">
+            —{copy.subtitle}
           </p>
         </div>
       </aside>

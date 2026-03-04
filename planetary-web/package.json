@@ -1,13 +1,14 @@
 {
   "name": "planetary-web",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.8",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "npx tsx scripts/record-update.ts && tsc -b && vite build",
     "record-update": "npx tsx scripts/record-update.ts",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && npx firebase-tools deploy --only hosting"
   },
   "dependencies": {
     "@solidjs/router": "^0.15.4",

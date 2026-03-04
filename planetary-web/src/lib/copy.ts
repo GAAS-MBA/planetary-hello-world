@@ -34,7 +34,10 @@ export const copy = {
   matterVerse: 'MatterVerse',
   matterVerseDesc:
     'Premise axioms, location, time for an Entity gliding through all possible space landing on this Planet under ZFC boundary conditions',
+  aboutPhw: 'About PHW',
+  top: 'Top',
   architect: 'Architect',
   architectDesc: 'Design Specification',
-  journeyMap: 'Journey Map',
+  journeyMap: 'Journey',
+  genesisTrigger: 'Genesis Trigger',
 } as const

@@ -1,4 +1,5 @@
 import { createSignal, createEffect, onCleanup, type Component } from 'solid-js'
+import { A } from '@solidjs/router'
 import { MapPin } from 'lucide-solid'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -16,39 +17,8 @@ interface JourneyEntry {
   timestamp: string
   commitTimestamp?: string
   timezone?: string
+  commitCount?: number
   address?: string
-}
-
-/**
- * Format commit time in local time at the given timezone.
- * ISO 8601: YYYY-MM-DDTHH:mm:ss (standard includes seconds)
- */
-function formatCommitTimeLocal(iso: string, timezone?: string): string {
-  try {
-    const d = new Date(iso)
-    const tz = timezone || 'UTC'
-    const parts = new Intl.DateTimeFormat('en-CA', {
-      timeZone: tz,
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: false,
-    }).formatToParts(d)
-    const get = (type: string) => parts.find((p) => p.type === type)?.value ?? ''
-    const pad = (v: string) => v.padStart(2, '0')
-    const y = get('year')
-    const m = pad(get('month'))
-    const day = pad(get('day'))
-    const h = pad(get('hour'))
-    const min = pad(get('minute'))
-    const s = pad(get('second'))
-    return `${y}-${m}-${day}T${h}:${min}:${s}`
-  } catch {
-    return iso
-  }
 }
 
 const journey = journeyData as { entries: JourneyEntry[] }
@@ -82,8 +52,17 @@ export const JourneyMap: Component = () => {
         opacity: 1,
         fillOpacity: 0.8,
       })
+      const fmt = (iso: string, tz?: string) => {
+        try {
+          const d = new Date(iso)
+          const parts = new Intl.DateTimeFormat('en-CA', { timeZone: tz || 'UTC', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }).formatToParts(d)
+          const g = (t: string) => parts.find((x) => x.type === t)?.value ?? ''
+          const pad = (v: string) => v.padStart(2, '0')
+          return `${g('year')}-${pad(g('month'))}-${pad(g('day'))}T${pad(g('hour'))}:${pad(g('minute'))}:${pad(g('second'))}`
+        } catch { return iso }
+      }
       const commitInfo = p.commitTimestamp
-        ? `Commit: ${p.commitHash} (${formatCommitTimeLocal(p.commitTimestamp, p.timezone)})`
+        ? `Commit: ${p.commitHash} (${fmt(p.commitTimestamp, p.timezone)})`
         : `Commit: ${p.commitHash}`
       marker.bindTooltip(
         p.address
@@ -143,51 +122,12 @@ export const JourneyMap: Component = () => {
         )}
       </section>
 
-      {points().length > 0 ? (
-        <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
-          <h2 class="font-mono text-sm font-medium text-stone-700">Genesis Trigger</h2>
-          <p class="mt-1 text-xs text-stone-500">UUIDv4 identifier, coordinates (ISO 6709, SI), time (ISO 8601)</p>
-          <p class="mt-1 text-xs text-stone-500">
-            Times follow ISO 8601. The first record's local time on Mar 5 2026 can be determined: {points()[0]?.timestamp && points()[0]?.timezone
-              ? formatCommitTimeLocal(points()[0].timestamp, points()[0].timezone)
-              : '—'}
-          </p>
-          <ul class="mt-3 space-y-3 text-sm text-stone-600">
-            {points().map((p, i) => (
-              <li class="rounded-lg border border-stone-100 p-3">
-                {p.address && (
-                  <p class="text-sm font-medium text-stone-700">{p.address}</p>
-                )}
-                <div class="flex flex-wrap items-center gap-2 mt-1">
-                  <span class="font-mono text-amber-600">#{i + 1}</span>
-                  <span class="font-mono text-xs text-stone-500 break-all">{p.id}</span>
-                </div>
-                <div class="mt-2 flex flex-wrap gap-3">
-                  <span class="font-mono">
-                    lat: {p.lat.toFixed(6)}, lon: {p.lon.toFixed(6)}
-                  </span>
-                  {p.alt != null && (
-                    <span class="font-mono text-stone-500">alt: {p.alt} m</span>
-                  )}
-                </div>
-                <div class="mt-1 text-xs text-stone-500">
-                  {p.timestamp}
-                </div>
-                <div class="mt-0.5 text-xs text-stone-500 font-mono">
-                  Version: v{p.version} · Commit: {p.commitHash}
-                  {p.commitTimestamp && (
-                    <span class="text-stone-400"> · {formatCommitTimeLocal(p.commitTimestamp, p.timezone)}</span>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : (
-        <p class="text-sm text-stone-500">
-          No records yet. Build with PHW_UPDATE_LAT and PHW_UPDATE_LON to accumulate entries.
-        </p>
-      )}
+      <p class="text-sm text-stone-500">
+        <A href="/genesis-trigger" class="text-amber-600 hover:text-amber-700 hover:underline">
+          Genesis Trigger
+        </A>
+        {' · Recorded points with UUIDv4, coordinates (ISO 6709), time (ISO 8601)'}
+      </p>
     </div>
   )
 }

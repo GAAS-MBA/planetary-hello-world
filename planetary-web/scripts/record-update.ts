@@ -33,6 +33,29 @@ function getVersion(): string {
   return pkg.version || '1.0.0'
 }
 
+function bumpPatch(version: string): string {
+  const match = version.match(/^(\d+)\.(\d+)\.(\d+)(?:-.*)?$/)
+  if (!match) return version
+  const [, major, minor, patch] = match
+  return `${major}.${minor}.${parseInt(patch!, 10) + 1}`
+}
+
+function getLastRecordedCommit(): string | null {
+  try {
+    const meta = JSON.parse(readFileSync(join(rootDir, 'src', 'lib', 'update-metadata.json'), 'utf-8'))
+    return meta.commitHash ?? null
+  } catch {
+    return null
+  }
+}
+
+function writeVersionToPackage(version: string): void {
+  const pkgPath = join(rootDir, 'package.json')
+  const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'))
+  pkg.version = version
+  writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n')
+}
+
 function getCommitHash(): string {
   try {
     return execSync('git rev-parse --short HEAD', { cwd: repoRoot }).toString().trim()
@@ -44,6 +67,16 @@ function getCommitHash(): string {
 function getCommitTimestamp(): string | null {
   try {
     return execSync('git show -s --format=%cI HEAD', { cwd: repoRoot }).toString().trim() || null
+  } catch {
+    return null
+  }
+}
+
+function getCommitCount(commitHash: string): number | null {
+  try {
+    const n = execSync(`git rev-list --count ${commitHash}`, { cwd: repoRoot }).toString().trim()
+    const num = parseInt(n, 10)
+    return Number.isNaN(num) ? null : num
   } catch {
     return null
   }
@@ -86,13 +119,22 @@ function getTimezone(lat: number, lon: number): string | null {
 }
 
 function main(): void {
-  const version = getVersion()
+  let version = getVersion()
   const commitHash = getCommitHash()
+  const lastCommit = getLastRecordedCommit()
+
+  // Architect: When x or x+1 changes — bump patch on new commit
+  if (lastCommit != null && lastCommit !== commitHash) {
+    version = bumpPatch(version)
+    writeVersionToPackage(version)
+    console.log(`Version bumped: ${version} (new commit ${commitHash})`)
+  }
+
   const timestamp = new Date().toISOString()
   const location = getLocation()
 
   const publicPath = join(rootDir, 'src', 'lib', 'journey-public.json')
-  type JourneyEntry = { id: string; lat: number; lon: number; alt?: number; version: string; commitHash: string; timestamp: string; commitTimestamp?: string; timezone?: string }
+  type JourneyEntry = { id: string; lat: number; lon: number; alt?: number; version: string; commitHash: string; timestamp: string; commitTimestamp?: string; timezone?: string; commitCount?: number }
   let publicJourney: { entries: JourneyEntry[] }
   try {
     publicJourney = JSON.parse(readFileSync(publicPath, 'utf-8'))
@@ -100,7 +142,7 @@ function main(): void {
     publicJourney = { entries: [] }
   }
 
-  // Backfill timezone for entries with lat/lon but no timezone
+  // Backfill timezone and commitCount for entries
   let modified = false
   for (const e of publicJourney.entries) {
     if (e.lat != null && e.lon != null && !e.timezone) {
@@ -110,12 +152,20 @@ function main(): void {
         modified = true
       }
     }
+    if (e.commitHash && e.commitCount == null) {
+      const count = getCommitCount(e.commitHash)
+      if (count != null) {
+        e.commitCount = count
+        modified = true
+      }
+    }
   }
 
   // Public journey: UUIDv4 + coordinates (no secret required)
   if (location) {
     const commitTimestamp = getCommitTimestamp()
     const timezone = getTimezone(location.lat, location.lon)
+    const commitCount = getCommitCount(commitHash)
     publicJourney.entries.push({
       id: randomUUID(),
       lat: location.lat,
@@ -126,6 +176,7 @@ function main(): void {
       timestamp,
       ...(commitTimestamp != null && { commitTimestamp }),
       ...(timezone != null && { timezone }),
+      ...(commitCount != null && { commitCount }),
     })
     modified = true
   }

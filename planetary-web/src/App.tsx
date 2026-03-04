@@ -5,11 +5,14 @@ import { Header } from './components/Header'
 import { Sidebar } from './components/Sidebar'
 import { Home } from './pages/Home'
 import { Architect } from './pages/Architect'
+import { Axiom } from './pages/Axiom'
 import { Axiomaticity } from './pages/Axiomaticity'
+import { AxiomaticSystem } from './pages/AxiomaticSystem'
 import { SpaceCalibration } from './pages/SpaceCalibration'
 import { TimeOrbitCalibration } from './pages/TimeOrbitCalibration'
 import { CivilCalibration } from './pages/CivilCalibration'
 import { JourneyMap } from './pages/JourneyMap'
+import { GenesisTrigger } from './pages/GenesisTrigger'
 
 const AppLayout: Component<RouteSectionProps> = (props) => {
   const [sidebarOpen, setSidebarOpen] = createSignal(false)
@@ -33,11 +36,14 @@ export default function App() {
     <HashRouter root={AppLayout}>
       <Route path="/" component={Home} />
       <Route path="/architect" component={Architect} />
+      <Route path="/axiom" component={Axiom} />
       <Route path="/axiomaticity" component={Axiomaticity} />
+      <Route path="/axiomatic-system" component={AxiomaticSystem} />
       <Route path="/space" component={SpaceCalibration} />
       <Route path="/time-orbit" component={TimeOrbitCalibration} />
       <Route path="/civil" component={CivilCalibration} />
       <Route path="/journey" component={JourneyMap} />
+      <Route path="/genesis-trigger" component={GenesisTrigger} />
     </HashRouter>
   )
 }

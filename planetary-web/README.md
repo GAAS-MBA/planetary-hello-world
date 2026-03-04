@@ -30,10 +30,20 @@ npm run dev
 
 [http://localhost:5173](http://localhost:5173) で表示。
 
+## 本番サイト
+
+**https://phw.tanaakk.com**
+
 ## ビルド
 
 ```bash
 npm run build
+```
+
+## デプロイ
+
+```bash
+npm run build && npx firebase-tools deploy --only hosting
 ```
 
 ## 更新メタデータ（位置・時刻の暗号化格納）
