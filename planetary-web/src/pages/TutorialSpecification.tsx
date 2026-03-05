@@ -219,6 +219,141 @@ export const TutorialSpecification: Component = () => (
           <p class="mt-0.5 text-sm text-stone-600">~2000 kcal/day (adult). Carbohydrates, fats, proteins.</p>
         </div>
       </div>
+
+      <h3 class="mt-4 font-mono text-xs font-medium text-stone-600">Distance per supply (一回の補給で動ける距離)</h3>
+      <p class="mt-1 text-xs text-stone-500">~2000 kcal ≈ walking ~25–40 km. Cycling ~80–120 km. Running ~15–25 km.</p>
+      <div class="mt-2 space-y-1">
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Walking (5 km/h)</span>
+          <span class="font-mono text-amber-600">~5–8 h ≈ 25–40 km</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Running (10 km/h)</span>
+          <span class="font-mono text-amber-600">~1.5–2.5 h ≈ 15–25 km</span>
+        </div>
+      </div>
+
+      <h3 class="mt-4 font-mono text-xs font-medium text-stone-600">Velocity — max output (走るスピード・速さ 最大出力)</h3>
+      <p class="mt-1 text-xs text-stone-500">SI: m/s. km/h in parentheses.</p>
+      <div class="mt-2 space-y-1">
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Forward (前方)</span>
+          <span class="font-mono text-amber-600">~12.4 m/s (~45 km/h elite) · ~8–10 m/s (~29–36 km/h typical)</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Backward (後方)</span>
+          <span class="font-mono text-amber-600">~4–6 m/s (~14–22 km/h)</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Lateral (側方)</span>
+          <span class="font-mono text-amber-600">~6–8 m/s (~22–29 km/h crossover) · ~2–4 m/s (~7–14 km/h shuffle)</span>
+        </div>
+      </div>
+      <p class="mt-1 text-[10px] text-stone-500">
+        Forward: Usain Bolt peak ~12.4 m/s. Backward/lateral: lower due to biomechanics.
+      </p>
+
+      <h3 class="mt-4 font-mono text-xs font-medium text-stone-600">Max output duration (最大出力持続時間)</h3>
+      <p class="mt-1 text-xs text-stone-500">How long peak velocity can be sustained. Anaerobic → aerobic transition.</p>
+      <div class="mt-2 space-y-1">
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Full sprint (100 m)</span>
+          <span class="font-mono text-amber-600">~10–12 s</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Near-max (200–400 m)</span>
+          <span class="font-mono text-amber-600">~20–60 s</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">High sustained (800 m)</span>
+          <span class="font-mono text-amber-600">~2–3 min</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Sustained run (marathon pace)</span>
+          <span class="font-mono text-amber-600">~2–4 h</span>
+        </div>
+      </div>
+
+      <h3 class="mt-4 font-mono text-xs font-medium text-stone-600">Jump height (ジャンプの高さ)</h3>
+      <p class="mt-1 text-xs text-stone-500">Vertical. SI: m.</p>
+      <div class="mt-2 space-y-1">
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Standing vertical (standing)</span>
+          <span class="font-mono text-amber-600">~0.5–0.6 m (elite) · ~0.3–0.4 m (typical)</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Running vertical (approach)</span>
+          <span class="font-mono text-amber-600">~0.8–1.0 m (elite)</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Broad jump (standing)</span>
+          <span class="font-mono text-amber-600">~2.5–3.5 m (typical)</span>
+        </div>
+      </div>
+
+      <h3 class="mt-4 font-mono text-xs font-medium text-stone-600">Fuel depletion (自然放電・基礎代謝による燃料切れ)</h3>
+      <p class="mt-1 text-xs text-stone-500">Basal metabolism ~1600 kcal/day. Time until depletion without supply.</p>
+      <div class="mt-2 space-y-1">
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Glycogen (糖質)</span>
+          <span class="font-mono text-amber-600">~12–24 h</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Water</span>
+          <span class="font-mono text-amber-600">~3–5 days</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Oxygen</span>
+          <span class="font-mono text-amber-600">~3–5 min</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Fat reserves (full)</span>
+          <span class="font-mono text-amber-600">~30–60 days</span>
+        </div>
+      </div>
+
+      <h3 class="mt-4 font-mono text-xs font-medium text-stone-600">Max durability without supply (補給なし最大耐用日数)</h3>
+      <p class="mt-1 text-xs text-stone-500">Survival limit when not replenishing. Environment-dependent.</p>
+      <div class="mt-2 space-y-1">
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Water only (水のみ欠乏)</span>
+          <span class="font-mono text-amber-600">~3–5 days</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Food only (食事のみ欠乏)</span>
+          <span class="font-mono text-amber-600">~30–60 days (fat reserves)</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Water + food (水・食事ともに欠乏)</span>
+          <span class="font-mono text-amber-600">~3–5 days (water limits)</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded border border-stone-100 px-2 py-1.5 text-xs">
+          <span class="text-stone-600">Complete fast (完全絶食・断水)</span>
+          <span class="font-mono text-amber-600">~3–5 days</span>
+        </div>
+      </div>
+      <p class="mt-1 text-[10px] text-stone-500">
+        Rule of 3: ~3 min without O₂, ~3 days without water, ~3 weeks without food.
+      </p>
+
+      <h3 class="mt-4 font-mono text-xs font-medium text-stone-600">Essential nutrients (補給すべき基礎栄養)</h3>
+      <div class="mt-2 flex flex-wrap gap-2">
+        {[
+          'Carbohydrates (糖質)',
+          'Proteins (タンパク質)',
+          'Fats (脂質)',
+          'Water (水)',
+          'Vitamins A, B, C, D, E, K',
+          'Minerals: Ca, Fe, Mg, Zn, Na, K, P, I',
+          'Essential amino acids (9)',
+          'Essential fatty acids (ω-3, ω-6)',
+          'Fiber (食物繊維)',
+        ].map((n) => (
+          <span class="rounded border border-amber-100 bg-amber-50/50 px-2 py-0.5 text-[10px] font-medium text-amber-800">
+            {n}
+          </span>
+        ))}
+      </div>
     </section>
 
     {/* Exhaust */}
