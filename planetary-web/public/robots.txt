@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://phw.tanaakk.com/sitemap.xml

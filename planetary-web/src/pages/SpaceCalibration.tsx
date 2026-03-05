@@ -8,23 +8,31 @@ import { copy } from '../lib/copy'
 export const SpaceCalibration: Component = () => (
   <div class="space-y-6">
     <div>
-      <h1 class="font-mono text-xl font-bold text-amber-600">{copy.calibration.space}</h1>
+      <h1 class="font-mono text-xl font-bold text-amber-600">Space Calibration</h1>
       <p class="mt-1 text-sm text-stone-500">{copy.calibration.spaceDesc}</p>
     </div>
 
     <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
       <h2 class="flex items-center gap-2 font-mono text-sm font-medium text-stone-700">
         <Globe size={16} />
-        Milky Way
+        Laniakea Supercluster
       </h2>
       <div class="mt-3 space-y-2 text-sm text-stone-600">
-        <p>The Solar System lies in the Orion Arm of the Milky Way. ~26,000 light-years from galactic center.</p>
+        <p>The Solar System lies within the Laniakea Supercluster (Hawaiian: immense heaven). Milky Way is in the Orion Arm, ~26,000 light-years from galactic center.</p>
         <ul class="list-inside list-disc space-y-1 text-stone-500">
+          <li>Laniakea: ~100,000–150,000 galaxies, major axis ~404 Mly</li>
           <li>Galactic longitude: ~0° (toward center)</li>
           <li>Galactic latitude: ~0° (galactic plane)</li>
           <li>Orbital period: ~225–250 Myr</li>
         </ul>
       </div>
+    </section>
+
+    <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
+      <h2 class="font-mono text-sm font-medium text-stone-700">Days Since Big Bang</h2>
+      <p class="mt-2 text-sm text-stone-600">
+        Universe age ~13.79 Gyr (Planck 2018) → <span class="font-mono text-amber-600">~5.04 × 10¹² days</span> since Big Bang.
+      </p>
     </section>
 
     <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">

@@ -1,6 +1,6 @@
 import { type Component } from 'solid-js'
 import { A } from '@solidjs/router'
-import { X, BookOpen, FileCode, Network, Lock, Globe, Orbit, Clock, Home, FileText, Map, Zap, PlayCircle, Dumbbell, AlertTriangle } from 'lucide-solid'
+import { X, BookOpen, FileCode, Network, Lock, Globe, Orbit, Clock, Home, FileText, Map, Zap, PlayCircle, Dumbbell, AlertTriangle, Stars, Sun, Circle } from 'lucide-solid'
 import { copy } from '../lib/copy'
 import { VERSION_DISPLAY, hasEncryptedUpdateMetadata } from '../lib/version'
 
@@ -75,15 +75,15 @@ export const Sidebar: Component<SidebarProps> = (props) => {
             </ul>
           </div>
 
-          {/* MatterVerse Calibration */}
+          {/* Calibration */}
           <div class="mb-4">
             <p class="mb-2 px-2 text-[10px] font-medium uppercase tracking-wider text-stone-400">
-              {copy.matterVerse}
+              Calibration
             </p>
             <ul class="space-y-1">
               <li>
                 <A
-                  href="/space"
+                  href="/calibration/space"
                   onClick={props.onClose}
                   class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
                   activeClass="bg-stone-100 text-amber-600"
@@ -94,18 +94,40 @@ export const Sidebar: Component<SidebarProps> = (props) => {
               </li>
               <li>
                 <A
-                  href="/time-orbit"
+                  href="/calibration/galaxy"
                   onClick={props.onClose}
                   class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
                   activeClass="bg-stone-100 text-amber-600"
                 >
-                  <Orbit size={18} class="shrink-0" />
-                  <span>{copy.calibration.timeOrbit}</span>
+                  <Stars size={18} class="shrink-0" />
+                  <span>{copy.calibration.galaxy}</span>
                 </A>
               </li>
               <li>
                 <A
-                  href="/civil"
+                  href="/calibration/solar"
+                  onClick={props.onClose}
+                  class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
+                  activeClass="bg-stone-100 text-amber-600"
+                >
+                  <Sun size={18} class="shrink-0" />
+                  <span>{copy.calibration.solar}</span>
+                </A>
+              </li>
+              <li>
+                <A
+                  href="/calibration/planet"
+                  onClick={props.onClose}
+                  class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
+                  activeClass="bg-stone-100 text-amber-600"
+                >
+                  <Circle size={18} class="shrink-0" />
+                  <span>{copy.calibration.planet}</span>
+                </A>
+              </li>
+              <li>
+                <A
+                  href="/calibration/civil"
                   onClick={props.onClose}
                   class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
                   activeClass="bg-stone-100 text-amber-600"
@@ -114,6 +136,46 @@ export const Sidebar: Component<SidebarProps> = (props) => {
                   <span>{copy.calibration.civil}</span>
                 </A>
               </li>
+              <li>
+                <A
+                  href="/calibration/orbit"
+                  onClick={props.onClose}
+                  class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
+                  activeClass="bg-stone-100 text-amber-600"
+                >
+                  <Orbit size={18} class="shrink-0" />
+                  <span>{copy.calibration.orbit}</span>
+                </A>
+              </li>
+            </ul>
+          </div>
+
+          {/* Events */}
+          <div class="mb-4">
+            <p class="mb-2 px-2 text-[10px] font-medium uppercase tracking-wider text-stone-400">
+              {copy.events}
+            </p>
+            <ul class="space-y-1">
+              <li>
+                <A
+                  href="/events/star-in-series"
+                  onClick={props.onClose}
+                  class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
+                  activeClass="bg-stone-100 text-amber-600"
+                >
+                  <Stars size={18} class="shrink-0" />
+                  <span>{copy.eventsStarInSeries}</span>
+                </A>
+              </li>
+            </ul>
+          </div>
+
+          {/* MatterVerse */}
+          <div class="mb-4">
+            <p class="mb-2 px-2 text-[10px] font-medium uppercase tracking-wider text-stone-400">
+              {copy.matterVerse}
+            </p>
+            <ul class="space-y-1">
               <li>
                 <A
                   href="/journey"

@@ -1,0 +1,24 @@
+/**
+ * Site configuration for SEO, sitemap, canonical URLs
+ */
+export const SITE_URL = 'https://phw.tanaakk.com'
+
+export const ROUTES: { path: string; title: string }[] = [
+  { path: '/', title: 'Planetary Hello World' },
+  { path: '/architect', title: 'Architect' },
+  { path: '/axiom', title: 'Axiom' },
+  { path: '/axiomaticity', title: 'Axiomaticity' },
+  { path: '/axiomatic-system', title: 'Axiomatic System' },
+  { path: '/calibration/space', title: 'Space Calibration' },
+  { path: '/calibration/galaxy', title: 'Galaxy Calibration' },
+  { path: '/calibration/solar', title: 'Solar Calibration' },
+  { path: '/calibration/planet', title: 'Planet Calibration' },
+  { path: '/calibration/civil', title: 'Civil Calibration' },
+  { path: '/calibration/orbit', title: 'Time/Orbit Calibration' },
+  { path: '/journey', title: 'Journey' },
+  { path: '/genesis-trigger', title: 'Genesis Trigger' },
+  { path: '/tutorials/startup-sequence', title: 'Startup Sequence' },
+  { path: '/tutorials/recommended-training', title: 'Recommended Training' },
+  { path: '/tutorials/error-handling', title: 'Error Handling' },
+  { path: '/events/star-in-series', title: 'Star in series' },
+]

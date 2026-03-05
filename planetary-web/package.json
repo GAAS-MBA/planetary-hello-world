@@ -1,11 +1,11 @@
 {
   "name": "planetary-web",
   "private": true,
-  "version": "1.0.11",
+  "version": "1.0.12",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npx tsx scripts/record-update.ts && tsc -b && vite build",
+    "build": "npx tsx scripts/record-update.ts && npx tsx scripts/generate-sitemap.ts && tsc -b && vite build",
     "record-update": "npx tsx scripts/record-update.ts",
     "preview": "vite preview",
     "deploy": "npm run build && npx firebase-tools deploy --only hosting"
