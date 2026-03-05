@@ -1,10 +1,12 @@
 import { type Component } from 'solid-js'
-import { Atom, Zap, Mountain, Layers } from 'lucide-solid'
+import { Atom, Zap, Mountain, Layers, Ruler, Globe } from 'lucide-solid'
 import { A } from '@solidjs/router'
 
 const links = [
   { href: '/library/elements', icon: Atom, label: 'Elements', desc: 'Periodic Table.' },
   { href: '/library/dynamics', icon: Zap, label: 'Dynamics', desc: 'Standard Model, force classification.' },
+  { href: '/library/scale', icon: Globe, label: 'Scale', desc: 'Planck scale to cosmic (極大).' },
+  { href: '/library/si', icon: Ruler, label: 'SI Units', desc: '国際単位系. Base units, derived units.' },
   { href: '/library/species-landscape', icon: Mountain, label: 'Species Landscape', desc: 'Input.' },
   { href: '/library/species-taxonomy', icon: Layers, label: 'Species Taxonomy', desc: 'count · ISO 17298, ISO 13208. What species exist on Earth.' },
 ] as const
@@ -14,7 +16,7 @@ export const Library: Component = () => (
     <div>
       <h1 class="font-mono text-xl font-bold text-amber-600">Library</h1>
       <p class="mt-1 text-sm text-stone-500">
-        Elements, Dynamics, Species Taxonomy. Reference for Planetary Hello World.
+        Elements, Dynamics, Scale, SI units, Species Taxonomy. Reference for Planetary Hello World.
       </p>
     </div>
 

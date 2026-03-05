@@ -1,5 +1,5 @@
 import { type Component } from 'solid-js'
-import { Thermometer } from 'lucide-solid'
+import { Thermometer, Layers } from 'lucide-solid'
 import { A } from '@solidjs/router'
 import indicatorData from '../../lib/indicator-planet-data.json'
 
@@ -14,6 +14,21 @@ interface EnvIndicator {
 }
 
 const envData = indicatorData.environmental as EnvIndicator[]
+const envMain = envData.filter((e) => e.id !== 'env-species' && e.id !== 'env-life')
+const envSpeciesLife = envData.filter((e) => e.id === 'env-species' || e.id === 'env-life')
+
+const IndicatorCard = (e: EnvIndicator) => (
+  <div class="flex flex-wrap items-start justify-between gap-2 rounded-lg border border-stone-100 px-3 py-2">
+    <div>
+      <p class="text-xs font-medium text-stone-700">{e.label}</p>
+      <p class="mt-0.5 text-[10px] text-stone-500">{e.note}</p>
+    </div>
+    <div class="text-right">
+      <p class="font-mono text-sm text-amber-600">{e.value}</p>
+      <p class="text-[10px] text-stone-400">{e.unit} · {e.ref}</p>
+    </div>
+  </div>
+)
 
 export const CockpitIndicatorEnvironmental: Component = () => (
   <div class="space-y-6">
@@ -35,18 +50,17 @@ export const CockpitIndicatorEnvironmental: Component = () => (
         Environmental Indicators
       </h2>
       <div class="mt-3 space-y-2">
-        {envData.map((e) => (
-          <div class="flex flex-wrap items-start justify-between gap-2 rounded-lg border border-stone-100 px-3 py-2">
-            <div>
-              <p class="text-xs font-medium text-stone-700">{e.label}</p>
-              <p class="mt-0.5 text-[10px] text-stone-500">{e.note}</p>
-            </div>
-            <div class="text-right">
-              <p class="font-mono text-sm text-amber-600">{e.value}</p>
-              <p class="text-[10px] text-stone-400">{e.unit} · {e.ref}</p>
-            </div>
-          </div>
-        ))}
+        {envMain.map((e) => IndicatorCard(e))}
+      </div>
+    </section>
+
+    <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
+      <h2 class="flex items-center gap-2 font-mono text-sm font-medium text-stone-700">
+        <Layers size={16} />
+        Species & Life Count
+      </h2>
+      <div class="mt-3 space-y-2">
+        {envSpeciesLife.map((e) => IndicatorCard(e))}
       </div>
     </section>
   </div>

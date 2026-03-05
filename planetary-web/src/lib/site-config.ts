@@ -34,6 +34,8 @@ export const ROUTES: { path: string; title: string }[] = [
   { path: '/library', title: 'Library' },
   { path: '/library/elements', title: 'Elements' },
   { path: '/library/dynamics', title: 'Dynamics' },
+  { path: '/library/scale', title: 'Scale' },
+  { path: '/library/si', title: 'SI Units' },
   { path: '/library/species-landscape', title: 'Species Landscape' },
   { path: '/library/species-taxonomy', title: 'Species Taxonomy' },
 ]

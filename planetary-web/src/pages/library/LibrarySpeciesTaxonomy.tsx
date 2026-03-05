@@ -58,7 +58,7 @@ export const LibrarySpeciesTaxonomy: Component = () => (
     <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
       <h2 class="font-mono text-sm font-medium text-stone-700">Species on Earth</h2>
       <p class="mt-2 text-sm text-stone-600">
-        Eukaryotes (~8.7e6 species). Bacteria, Archaea: orders of magnitude more. Linnaean taxonomy (Domain, Kingdom, Phylum, Class, Order, Family, Genus, Species). ISO 17298 (biodiversity in strategy), ISO 13208 (vocabulary).
+        Eukaryotes (~8.7×10⁶ species). Bacteria, Archaea: orders of magnitude more. Linnaean taxonomy (Domain, Kingdom, Phylum, Class, Order, Family, Genus, Species). ISO 17298 (biodiversity in strategy), ISO 13208 (vocabulary).
       </p>
       <p class="mt-2">
         <A href="/tutorials/specification/classification" class="text-xs font-mono text-amber-600 hover:underline">

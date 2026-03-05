@@ -35,8 +35,10 @@ import { CockpitVersion } from './pages/cockpit/CockpitVersion'
 import { Library } from './pages/Library'
 import { LibraryElements } from './pages/library/LibraryElements'
 import { LibraryDynamics } from './pages/library/LibraryDynamics'
+import { LibraryScale } from './pages/library/LibraryScale'
 import { LibrarySpeciesLandscape } from './pages/library/LibrarySpeciesLandscape'
 import { LibrarySpeciesTaxonomy } from './pages/library/LibrarySpeciesTaxonomy'
+import { LibrarySI } from './pages/library/LibrarySI'
 
 const AppLayout: Component<RouteSectionProps> = (props) => {
   const [sidebarOpen, setSidebarOpen] = createSignal(false)
@@ -92,6 +94,8 @@ export default function App() {
       <Route path="/library" component={Library} />
       <Route path="/library/elements" component={LibraryElements} />
       <Route path="/library/dynamics" component={LibraryDynamics} />
+      <Route path="/library/scale" component={LibraryScale} />
+      <Route path="/library/si" component={LibrarySI} />
       <Route path="/library/species-landscape" component={LibrarySpeciesLandscape} />
       <Route path="/library/species-taxonomy" component={LibrarySpeciesTaxonomy} />
     </Router>
