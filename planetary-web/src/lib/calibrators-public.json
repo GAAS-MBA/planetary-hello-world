@@ -1,0 +1,154 @@
+{
+  "calibrators": [
+    {
+      "id": "254e05fd-df54-47b8-a3e6-b452526ac644",
+      "name": "Royal Observatory Greenwich",
+      "type": "reference",
+      "lat": 51.4769,
+      "lon": 0.0,
+      "alt": 45,
+      "country": "UK",
+      "description": "Prime meridian (0° longitude). UTC+0 reference. Founded 1675."
+    },
+    {
+      "id": "a1c3dbb3-bc48-4ddd-b316-5b0bba4cfc0c",
+      "name": "LIGO Hanford",
+      "type": "gravitational",
+      "lat": 46.4553,
+      "lon": -119.4078,
+      "alt": 230,
+      "country": "USA",
+      "description": "4 km arms. Gravitational wave detector. Washington State."
+    },
+    {
+      "id": "56029943-6678-4ca5-a187-907f8e3ba78e",
+      "name": "LIGO Livingston",
+      "type": "gravitational",
+      "lat": 30.5629,
+      "lon": -90.7742,
+      "alt": 16,
+      "country": "USA",
+      "description": "4 km arms. Gravitational wave detector. Louisiana."
+    },
+    {
+      "id": "2bd18d35-f35f-4c2a-805e-569c91717555",
+      "name": "Virgo",
+      "type": "gravitational",
+      "lat": 43.6314,
+      "lon": 10.5050,
+      "alt": 50,
+      "country": "Italy",
+      "description": "3 km arms. Cascina, Pisa. EGO. Gravitational wave detector."
+    },
+    {
+      "id": "2c3d9117-36b3-4110-aeb3-941982b51d44",
+      "name": "KAGRA",
+      "type": "gravitational",
+      "lat": 36.42,
+      "lon": 137.31,
+      "alt": 414,
+      "country": "Japan",
+      "description": "3 km arms. Kamioka mine, 200 m underground. Cryogenic mirrors. Asia's first GW detector."
+    },
+    {
+      "id": "f3458779-19cf-4d6f-b370-1d75c76e4449",
+      "name": "ALMA",
+      "type": "electromagnetic",
+      "lat": -23.0232,
+      "lon": -67.7546,
+      "alt": 5000,
+      "country": "Chile",
+      "description": "66 antennas. Atacama. Submm/mm. EHT array."
+    },
+    {
+      "id": "40369973-b33e-45c6-b57f-223f0dc27eb3",
+      "name": "VLT Paranal",
+      "type": "electromagnetic",
+      "lat": -24.6272,
+      "lon": -70.4047,
+      "alt": 2635,
+      "country": "Chile",
+      "description": "4×8.2 m optical. ESO. Cerro Paranal."
+    },
+    {
+      "id": "2ee65ebf-f35a-47a2-9b95-e0fd5ba67490",
+      "name": "SMA",
+      "type": "electromagnetic",
+      "lat": 19.8243,
+      "lon": -155.4781,
+      "alt": 4110,
+      "country": "USA",
+      "description": "Submillimeter Array. Mauna Kea, Hawaii. EHT array."
+    },
+    {
+      "id": "ed9b8fff-49c5-4c69-aa34-ffe928f31932",
+      "name": "SMT",
+      "type": "electromagnetic",
+      "lat": 32.7013,
+      "lon": -109.8903,
+      "alt": 3160,
+      "country": "USA",
+      "description": "Submillimeter Telescope. Mt. Graham, Arizona. EHT array."
+    },
+    {
+      "id": "b79ae7bb-4154-4c7e-bf43-68b6b6779bc0",
+      "name": "APEX",
+      "type": "electromagnetic",
+      "lat": -23.0064,
+      "lon": -67.7595,
+      "alt": 5105,
+      "country": "Chile",
+      "description": "12 m submm. Chajnantor. EHT array."
+    },
+    {
+      "id": "def3edb3-6cbc-4398-8312-dacb1f862ab4",
+      "name": "IRAM 30m",
+      "type": "electromagnetic",
+      "lat": 37.0664,
+      "lon": -3.3936,
+      "alt": 2850,
+      "country": "Spain",
+      "description": "30 m mm/submm. Pico Veleta. EHT array."
+    },
+    {
+      "id": "eb2e5be8-cca6-4c85-bddf-8b3429aa8a5c",
+      "name": "JCMT",
+      "type": "electromagnetic",
+      "lat": 19.8223,
+      "lon": -155.4742,
+      "alt": 4092,
+      "country": "USA",
+      "description": "15 m submm. Mauna Kea. EHT array."
+    },
+    {
+      "id": "14489fd0-8233-46c5-b6bd-0d85c9c22409",
+      "name": "LMT",
+      "type": "electromagnetic",
+      "lat": 18.9856,
+      "lon": -97.3147,
+      "alt": 4640,
+      "country": "Mexico",
+      "description": "50 m. Sierra Negra. EHT array."
+    },
+    {
+      "id": "e0e6276e-51b2-4e9c-b695-c2cd6df96554",
+      "name": "SPT",
+      "type": "electromagnetic",
+      "lat": -89.9917,
+      "lon": 0,
+      "alt": 2800,
+      "country": "Antarctica",
+      "description": "10 m. South Pole. EHT array."
+    },
+    {
+      "id": "96ca559d-ff45-49a0-aca8-379da567d4af",
+      "name": "NOEMA",
+      "type": "electromagnetic",
+      "lat": 44.6347,
+      "lon": 5.9083,
+      "alt": 2550,
+      "country": "France",
+      "description": "12×15 m interferometer. Plateau de Bure. EHT array."
+    }
+  ]
+}

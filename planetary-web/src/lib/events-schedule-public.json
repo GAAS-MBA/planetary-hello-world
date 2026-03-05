@@ -1,0 +1,76 @@
+{
+  "observableStarEvents": [
+    {
+      "id": "30ec7113-54e2-4ba9-b4e4-1d19f62fde4e",
+      "date": "2025-08",
+      "label": "Perseid Meteor Shower",
+      "description": "Peak Aug 12–13. Up to 100 meteors/hr. Observable from Northern Hemisphere.",
+      "category": "meteor"
+    },
+    {
+      "id": "6098b6e4-469c-4802-9547-7cafa89e9f85",
+      "date": "2025-12",
+      "label": "Geminid Meteor Shower",
+      "description": "Peak Dec 13–14. One of the best annual showers. 120+ meteors/hr.",
+      "category": "meteor"
+    },
+    {
+      "id": "cd1c5652-c938-46e3-8aed-a994e2c0e11c",
+      "date": "2025-10",
+      "label": "Mars Opposition",
+      "description": "Mars at opposition. Brightest and closest. Best viewing.",
+      "category": "planet"
+    },
+    {
+      "id": "208911cf-15e7-4c01-8fec-906ca1f509b7",
+      "date": "2026-04",
+      "label": "Jupiter–Saturn Conjunction",
+      "description": "Jupiter and Saturn visible close together in morning sky.",
+      "category": "planet"
+    }
+  ],
+  "gravitationalEvents": [
+    {
+      "id": "057211c1-fc4a-4dab-bc57-ffb392e32cb9",
+      "date": "2026-08-12",
+      "label": "Total Solar Eclipse",
+      "description": "Path: Northern Russia, Arctic, Greenland, Iceland, Spain. Max duration 2m 18s.",
+      "category": "eclipse"
+    },
+    {
+      "id": "ff6c9c2e-1c6a-454b-a1b1-473e978e1ddd",
+      "date": "2027-08-02",
+      "label": "Total Solar Eclipse",
+      "description": "Eclipse of the century. 6m 23s totality. Spain, N Africa, Saudi Arabia, Yemen, Somalia. Longest until 2114.",
+      "category": "eclipse"
+    },
+    {
+      "id": "0e69853c-1a63-4e08-a0e8-1f4123b6aaff",
+      "date": "2026-02-17",
+      "label": "Annular Solar Eclipse",
+      "description": "Ring of fire. Path over Antarctica. Partial from S Argentina, Chile, Africa.",
+      "category": "eclipse"
+    },
+    {
+      "id": "b618b852-f814-4829-b1d3-dcc8b549d9a9",
+      "date": "2023-11-23",
+      "label": "GW231123",
+      "description": "GW231123: Most massive black hole merger ever observed. ~225 M☉ final. LIGO-Virgo-KAGRA.",
+      "category": "gravitational"
+    },
+    {
+      "id": "cfdb304d-791b-41a8-8535-e214c5bafdab",
+      "date": "2025-01-14",
+      "label": "GW250114",
+      "description": "Loudest gravitational wave signal. SNR ~80. Two ~33 M☉ black holes. Kerr nature tests.",
+      "category": "gravitational"
+    },
+    {
+      "id": "b46e7f65-2f2e-43b4-897b-509b31ed6d71",
+      "date": "2025+",
+      "label": "LVK Observing Run",
+      "description": "LIGO-Virgo-KAGRA O4/O5. 200+ black hole mergers detected. Ongoing gravitational wave astronomy.",
+      "category": "gravitational"
+    }
+  ]
+}

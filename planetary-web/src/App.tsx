@@ -22,6 +22,8 @@ import { TutorialStartupSequence } from './pages/TutorialStartupSequence'
 import { TutorialRecommendedTraining } from './pages/TutorialRecommendedTraining'
 import { TutorialErrorHandling } from './pages/TutorialErrorHandling'
 import { EventsStarInSeries } from './pages/EventsStarInSeries'
+import { EventsSchedule } from './pages/EventsSchedule'
+import { Calibrators } from './pages/Calibrators'
 
 const AppLayout: Component<RouteSectionProps> = (props) => {
   const [sidebarOpen, setSidebarOpen] = createSignal(false)
@@ -64,6 +66,8 @@ export default function App() {
       <Route path="/tutorials/recommended-training" component={TutorialRecommendedTraining} />
       <Route path="/tutorials/error-handling" component={TutorialErrorHandling} />
       <Route path="/events/star-in-series" component={EventsStarInSeries} />
+      <Route path="/events/schedule" component={EventsSchedule} />
+      <Route path="/calibrators" component={Calibrators} />
     </Router>
   )
 }

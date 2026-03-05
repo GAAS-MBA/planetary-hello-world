@@ -21,4 +21,6 @@ export const ROUTES: { path: string; title: string }[] = [
   { path: '/tutorials/recommended-training', title: 'Recommended Training' },
   { path: '/tutorials/error-handling', title: 'Error Handling' },
   { path: '/events/star-in-series', title: 'Star in series' },
+  { path: '/events/schedule', title: 'Events Schedule' },
+  { path: '/calibrators', title: 'Calibrators' },
 ]

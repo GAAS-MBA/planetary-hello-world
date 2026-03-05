@@ -53,4 +53,7 @@ export const copy = {
   tutorialErrorHandling: 'Error Handling',
   events: 'Events',
   eventsStarInSeries: 'Star in series',
+  eventsSchedule: 'Events Schedule',
+  calibrators: 'Calibrators',
+  calibratorsCoordinates: 'Coordinates',
 } as const
