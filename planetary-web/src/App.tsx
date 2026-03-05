@@ -16,13 +16,14 @@ import { SolarCalibration } from './pages/SolarCalibration'
 import { PlanetCalibration } from './pages/PlanetCalibration'
 import { CivilCalibration } from './pages/CivilCalibration'
 import { TimeOrbitCalibration } from './pages/TimeOrbitCalibration'
+import { CosmicEventCalibration } from './pages/CosmicEventCalibration'
 import { JourneyMap } from './pages/JourneyMap'
 import { GenesisTrigger } from './pages/GenesisTrigger'
 import { TutorialStartupSequence } from './pages/TutorialStartupSequence'
 import { TutorialRecommendedTraining } from './pages/TutorialRecommendedTraining'
 import { TutorialErrorHandling } from './pages/TutorialErrorHandling'
-import { EventsStarInSeries } from './pages/EventsStarInSeries'
 import { EventsSchedule } from './pages/EventsSchedule'
+import { ScheduleArchive } from './pages/ScheduleArchive'
 import { Calibrators } from './pages/Calibrators'
 
 const AppLayout: Component<RouteSectionProps> = (props) => {
@@ -60,13 +61,14 @@ export default function App() {
       <Route path="/calibration/planet" component={PlanetCalibration} />
       <Route path="/calibration/civil" component={CivilCalibration} />
       <Route path="/calibration/orbit" component={TimeOrbitCalibration} />
+      <Route path="/calibration/cosmic-event" component={CosmicEventCalibration} />
       <Route path="/journey" component={JourneyMap} />
       <Route path="/genesis-trigger" component={GenesisTrigger} />
       <Route path="/tutorials/startup-sequence" component={TutorialStartupSequence} />
       <Route path="/tutorials/recommended-training" component={TutorialRecommendedTraining} />
       <Route path="/tutorials/error-handling" component={TutorialErrorHandling} />
-      <Route path="/events/star-in-series" component={EventsStarInSeries} />
       <Route path="/events/schedule" component={EventsSchedule} />
+      <Route path="/events/schedule-archive" component={ScheduleArchive} />
       <Route path="/calibrators" component={Calibrators} />
     </Router>
   )

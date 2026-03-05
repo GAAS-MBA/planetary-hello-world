@@ -1,7 +1,6 @@
 import { type Component } from 'solid-js'
 import { Stars, Zap } from 'lucide-solid'
 import { A } from '@solidjs/router'
-import { copy } from '../lib/copy'
 import scheduleData from '../lib/events-schedule-public.json'
 import eventsData from '../lib/events-public.json'
 import { isComingEvent, type ScheduleEvent } from '../lib/schedule-utils'
@@ -23,7 +22,7 @@ interface CelestialEvent {
 const starInSeries = eventsData as { events: CelestialEvent[] }
 
 const now = new Date()
-const isComing = (e: ScheduleEvent | CelestialEvent) => isComingEvent(e.date, now)
+const isArchive = (e: ScheduleEvent | CelestialEvent) => !isComingEvent(e.date, now)
 
 const EventCard = (e: ScheduleEvent, i: number) => (
   <li class="rounded-lg border border-stone-100 p-3">
@@ -60,22 +59,22 @@ const CelestialEventCard = (e: CelestialEvent, i: number) => (
   </li>
 )
 
-export const EventsSchedule: Component = () => {
-  const comingStar = schedule.observableStarEvents.filter(isComing)
-  const comingGrav = schedule.gravitationalEvents.filter(isComing)
-  const comingPlanetary = starInSeries.events.filter((e) => e.type === 'planetary' && isComing(e))
-  const comingStellar = starInSeries.events.filter((e) => e.type === 'stellar' && isComing(e))
+export const ScheduleArchive: Component = () => {
+  const archivedStar = schedule.observableStarEvents.filter(isArchive)
+  const archivedGrav = schedule.gravitationalEvents.filter(isArchive)
+  const archivedPlanetary = starInSeries.events.filter((e) => e.type === 'planetary' && isArchive(e))
+  const archivedStellar = starInSeries.events.filter((e) => e.type === 'stellar' && isArchive(e))
 
   return (
     <div class="space-y-6">
       <div>
-        <h1 class="font-mono text-xl font-bold text-amber-600">{copy.eventsSchedule}</h1>
+        <h1 class="font-mono text-xl font-bold text-amber-600">Schedule Archive</h1>
         <p class="mt-1 text-sm text-stone-500">
-          Observable star events, gravitational events, planetary & stellar alignments. UUIDv4 per event.
+          Past events. Observable star events, gravitational events, planetary & stellar alignments.
         </p>
         <p class="mt-2">
-          <A href="/events/schedule-archive" class="text-xs font-mono text-amber-600 hover:underline">
-            → Schedule Archive
+          <A href="/events/schedule" class="text-xs font-mono text-amber-600 hover:underline">
+            ← Coming Schedule
           </A>
         </p>
       </div>
@@ -83,47 +82,57 @@ export const EventsSchedule: Component = () => {
       <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
         <h2 class="flex items-center gap-2 font-mono text-sm font-medium text-stone-700">
           <Stars size={16} />
-          Coming Schedule — Observable Star Events (観測できている星のイベント)
+          Observable Star Events (Archive)
         </h2>
-        <p class="mt-1 text-xs text-stone-500">
-          Meteor showers, planetary oppositions, conjunctions. Visible with naked eye or small optics.
-        </p>
-        <ul class="mt-3 space-y-3 text-sm">
-          {comingStar.map((e, i) => EventCard(e, i))}
-        </ul>
+        {archivedStar.length > 0 ? (
+          <ul class="mt-3 space-y-3 text-sm">
+            {archivedStar.map((e, i) => EventCard(e, i))}
+          </ul>
+        ) : (
+          <p class="mt-3 text-sm text-stone-500">No archived star events.</p>
+        )}
       </section>
 
       <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
         <h2 class="flex items-center gap-2 font-mono text-sm font-medium text-stone-700">
           <Zap size={16} />
-          Coming Schedule — Gravitational Events
+          Gravitational Events (Archive)
         </h2>
-        <p class="mt-1 text-xs text-stone-500">
-          Total/annular solar eclipses, black hole mergers (LIGO-Virgo-KAGRA), gravitational wave detections.
-        </p>
-        <ul class="mt-3 space-y-3 text-sm">
-          {comingGrav.map((e, i) => EventCard(e, i))}
-        </ul>
+        {archivedGrav.length > 0 ? (
+          <ul class="mt-3 space-y-3 text-sm">
+            {archivedGrav.map((e, i) => EventCard(e, i))}
+          </ul>
+        ) : (
+          <p class="mt-3 text-sm text-stone-500">No archived gravitational events.</p>
+        )}
       </section>
 
       <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
         <h2 class="flex items-center gap-2 font-mono text-sm font-medium text-stone-700">
           <Stars size={16} />
-          Coming Schedule — Planetary alignments (惑星直列)
+          Planetary alignments (惑星直列) — Archive
         </h2>
-        <ul class="mt-3 space-y-3 text-sm">
-          {comingPlanetary.map((e, i) => CelestialEventCard(e, i))}
-        </ul>
+        {archivedPlanetary.length > 0 ? (
+          <ul class="mt-3 space-y-3 text-sm">
+            {archivedPlanetary.map((e, i) => CelestialEventCard(e, i))}
+          </ul>
+        ) : (
+          <p class="mt-3 text-sm text-stone-500">No archived planetary alignments.</p>
+        )}
       </section>
 
       <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
         <h2 class="flex items-center gap-2 font-mono text-sm font-medium text-stone-700">
           <Stars size={16} />
-          Coming Schedule — Stellar alignments (恒星直列)
+          Stellar alignments (恒星直列) — Archive
         </h2>
-        <ul class="mt-3 space-y-3 text-sm">
-          {comingStellar.map((e, i) => CelestialEventCard(e, i))}
-        </ul>
+        {archivedStellar.length > 0 ? (
+          <ul class="mt-3 space-y-3 text-sm">
+            {archivedStellar.map((e, i) => CelestialEventCard(e, i))}
+          </ul>
+        ) : (
+          <p class="mt-3 text-sm text-stone-500">No archived stellar alignments.</p>
+        )}
       </section>
     </div>
   )

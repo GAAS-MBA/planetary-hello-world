@@ -2,6 +2,9 @@ import { type Component } from 'solid-js'
 import { A } from '@solidjs/router'
 import { X, BookOpen, FileCode, Network, Lock, Globe, Orbit, Clock, Home, FileText, Map, Zap, PlayCircle, Dumbbell, AlertTriangle, Stars, Sun, Circle, Calendar, Gauge } from 'lucide-solid'
 import { copy } from '../lib/copy'
+import { ROUTES } from '../lib/site-config'
+
+const HOME_TITLE = ROUTES.find((r) => r.path === '/')?.title ?? 'Planetary Hello World'
 import { VERSION_DISPLAY, hasEncryptedUpdateMetadata } from '../lib/version'
 
 
@@ -30,7 +33,7 @@ export const Sidebar: Component<SidebarProps> = (props) => {
       >
         <div class="flex h-14 min-h-14 items-center justify-between border-b border-stone-200 px-4">
           <div>
-            <p class="font-mono text-sm font-medium text-amber-600">{copy.title}</p>
+            <p class="font-mono text-sm font-medium text-amber-600">{HOME_TITLE}</p>
           </div>
           <button
             type="button"
@@ -178,6 +181,17 @@ export const Sidebar: Component<SidebarProps> = (props) => {
                   <span>{copy.calibration.orbit}</span>
                 </A>
               </li>
+              <li>
+                <A
+                  href="/calibration/cosmic-event"
+                  onClick={props.onClose}
+                  class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
+                  activeClass="bg-stone-100 text-amber-600"
+                >
+                  <Zap size={18} class="shrink-0" />
+                  <span>{copy.calibration.cosmicEvent}</span>
+                </A>
+              </li>
             </ul>
           </div>
 
@@ -189,17 +203,6 @@ export const Sidebar: Component<SidebarProps> = (props) => {
             <ul class="space-y-1">
               <li>
                 <A
-                  href="/events/star-in-series"
-                  onClick={props.onClose}
-                  class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
-                  activeClass="bg-stone-100 text-amber-600"
-                >
-                  <Stars size={18} class="shrink-0" />
-                  <span>{copy.eventsStarInSeries}</span>
-                </A>
-              </li>
-              <li>
-                <A
                   href="/events/schedule"
                   onClick={props.onClose}
                   class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
@@ -207,6 +210,17 @@ export const Sidebar: Component<SidebarProps> = (props) => {
                 >
                   <Calendar size={18} class="shrink-0" />
                   <span>{copy.eventsSchedule}</span>
+                </A>
+              </li>
+              <li>
+                <A
+                  href="/events/schedule-archive"
+                  onClick={props.onClose}
+                  class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
+                  activeClass="bg-stone-100 text-amber-600"
+                >
+                  <Calendar size={18} class="shrink-0" />
+                  <span>{copy.scheduleArchive}</span>
                 </A>
               </li>
             </ul>

@@ -4,13 +4,15 @@ import { A } from '@solidjs/router'
 import { ChevronRight } from 'lucide-solid'
 import { SITE_URL, ROUTES } from '../lib/site-config'
 
+const HOME_BREADCRUMB_TITLE = 'Top'
+
 const getBreadcrumb = (path: string): { path: string; title: string }[] => {
-  if (path === '/' || path === '') return [{ path: '/', title: 'Planetary Hello World' }]
+  if (path === '/' || path === '') return [{ path: '/', title: HOME_BREADCRUMB_TITLE }]
   const route = ROUTES.find((r) => r.path === path || path.startsWith(r.path + '/'))
-  if (!route) return [{ path: '/', title: 'Planetary Hello World' }, { path, title: path }]
-  if (route.path === path) return [{ path: '/', title: 'Planetary Hello World' }, { path: route.path, title: route.title }]
+  if (!route) return [{ path: '/', title: HOME_BREADCRUMB_TITLE }, { path, title: path }]
+  if (route.path === path) return [{ path: '/', title: HOME_BREADCRUMB_TITLE }, { path: route.path, title: route.title }]
   const parts = path.split('/').filter(Boolean)
-  const items: { path: string; title: string }[] = [{ path: '/', title: 'Planetary Hello World' }]
+  const items: { path: string; title: string }[] = [{ path: '/', title: HOME_BREADCRUMB_TITLE }]
   let acc = ''
   for (const p of parts) {
     acc += '/' + p

@@ -1,16 +1,25 @@
 import { type Component } from 'solid-js'
 import { SingularityStates } from '../components/SingularityStates'
 import { EventHorizon } from '../components/EventHorizon'
+import { BigBangCountUpCard } from '../components/BigBangCountUpCard'
+import { OurCurrentAddress } from '../components/OurCurrentAddress'
+import { DistanceFromEarthCard } from '../components/DistanceFromEarthCard'
+import { EventsScheduleCard } from '../components/EventsScheduleCard'
 import { copy } from '../lib/copy'
 
 export const Home: Component = () => (
   <div class="mx-auto max-w-4xl space-y-8">
-    {/* Hero */}
-    <section class="text-center">
-      <p class="max-w-2xl mx-auto text-sm leading-relaxed text-stone-600">
-        Ontopologics grounded in Groundism. An experimental device for aiming to prove the AdS/CFT Maldacena correspondence conjecture by ZKP—P=NP at the boundary of axiomatic systems.
-      </p>
-    </section>
+    {/* Big Bang: Days & Seconds Ago */}
+    <BigBangCountUpCard showLink />
+
+    {/* Our current address */}
+    <OurCurrentAddress showLink />
+
+    {/* Distance from Earth */}
+    <DistanceFromEarthCard showLink />
+
+    {/* Events Schedule */}
+    <EventsScheduleCard />
 
     {/* Event Horizon: Spirit | Axiomaticity | Body */}
     <section>

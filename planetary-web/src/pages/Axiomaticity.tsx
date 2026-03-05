@@ -15,6 +15,13 @@ export const Axiomaticity: Component = () => (
     </div>
 
     <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
+      <h2 class="font-mono text-sm font-medium text-stone-700">Groundism / Ontopologics</h2>
+      <p class="mt-3 text-sm leading-relaxed text-stone-600">
+        Ontopologics grounded in Groundism. An experimental device for aiming to prove the AdS/CFT Maldacena correspondence conjecture by ZKP—P=NP at the boundary of axiomatic systems.
+      </p>
+    </section>
+
+    <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
       <h2 class="flex items-center gap-2 font-mono text-sm font-medium text-stone-700">
         <GitBranch size={16} />
         Spirit | Axiomaticity | Body

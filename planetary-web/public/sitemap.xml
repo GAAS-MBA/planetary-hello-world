@@ -67,6 +67,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://phw.tanaakk.com/calibration/cosmic-event</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://phw.tanaakk.com/journey</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -97,13 +103,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://phw.tanaakk.com/events/star-in-series</loc>
+    <loc>https://phw.tanaakk.com/events/schedule</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://phw.tanaakk.com/events/schedule</loc>
+    <loc>https://phw.tanaakk.com/events/schedule-archive</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
