@@ -1,6 +1,6 @@
-import { type Component } from 'solid-js'
-import { A } from '@solidjs/router'
-import { X, BookOpen, FileCode, Network, Lock, Globe, Orbit, Clock, Home, FileText, Map, Zap, PlayCircle, Dumbbell, AlertTriangle, Stars, Sun, Circle, Calendar, Gauge } from 'lucide-solid'
+import { createSignal, createEffect, type Component } from 'solid-js'
+import { A, useLocation } from '@solidjs/router'
+import { X, BookOpen, FileCode, Network, Lock, Globe, Orbit, Clock, Home, FileText, Map, Zap, PlayCircle, Dumbbell, AlertTriangle, Stars, Sun, Circle, Calendar, Gauge, ChevronDown, ChevronRight } from 'lucide-solid'
 import { copy } from '../lib/copy'
 import { ROUTES } from '../lib/site-config'
 
@@ -13,7 +13,15 @@ interface SidebarProps {
   onClose: () => void
 }
 
+const COSMO_SUB_PATHS = ['/calibration/cosmo', '/calibration/universe-geometry', '/calibration/theoretical-max-extent', '/calibration/observable-universe']
+
 export const Sidebar: Component<SidebarProps> = (props) => {
+  const location = useLocation()
+  const isCosmoActive = () => COSMO_SUB_PATHS.some((p) => location.pathname === p || location.pathname.startsWith(p + '/'))
+  const [cosmoExpanded, setCosmoExpanded] = createSignal(true)
+  createEffect(() => {
+    if (isCosmoActive()) setCosmoExpanded(true)
+  })
 
   return (
     <>
@@ -167,15 +175,59 @@ export const Sidebar: Component<SidebarProps> = (props) => {
                 </A>
               </li>
               <li>
-                <A
-                  href="/calibration/galaxy"
-                  onClick={props.onClose}
-                  class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
-                  activeClass="bg-stone-100 text-amber-600"
-                >
-                  <Stars size={18} class="shrink-0" />
-                  <span>{copy.calibration.galaxy}</span>
-                </A>
+                <div class="flex items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() => setCosmoExpanded((e) => !e)}
+                    class="flex shrink-0 rounded p-1 text-stone-500 hover:bg-stone-100 hover:text-stone-700"
+                    aria-label={cosmoExpanded() ? 'Collapse Cosmo submenu' : 'Expand Cosmo submenu'}
+                  >
+                    {cosmoExpanded() ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+                  </button>
+                  <A
+                    href="/calibration/cosmo"
+                    onClick={props.onClose}
+                    class="flex flex-1 items-center gap-3 rounded-lg px-2 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
+                    activeClass="bg-stone-100 text-amber-600"
+                  >
+                    <Stars size={18} class="shrink-0" />
+                    <span>{copy.calibration.cosmo}</span>
+                  </A>
+                </div>
+                {cosmoExpanded() && (
+                  <ul class="mt-0 space-y-0">
+                    <li>
+                      <A
+                        href="/calibration/universe-geometry"
+                        onClick={props.onClose}
+                        class="flex items-center gap-3 rounded-lg px-3 py-2 pl-10 text-stone-600 transition hover:bg-stone-100 hover:text-amber-600"
+                        activeClass="bg-stone-100 text-amber-600"
+                      >
+                        <span class="text-xs">{copy.calibration.universeGeometry}</span>
+                      </A>
+                    </li>
+                    <li>
+                      <A
+                        href="/calibration/theoretical-max-extent"
+                        onClick={props.onClose}
+                        class="flex items-center gap-3 rounded-lg px-3 py-2 pl-10 text-stone-600 transition hover:bg-stone-100 hover:text-amber-600"
+                        activeClass="bg-stone-100 text-amber-600"
+                      >
+                        <span class="text-xs">{copy.calibration.theoreticalMaxExtent}</span>
+                      </A>
+                    </li>
+                    <li>
+                      <A
+                        href="/calibration/observable-universe"
+                        onClick={props.onClose}
+                        class="flex items-center gap-3 rounded-lg px-3 py-2 pl-10 text-stone-600 transition hover:bg-stone-100 hover:text-amber-600"
+                        activeClass="bg-stone-100 text-amber-600"
+                      >
+                        <span class="text-xs">{copy.calibration.observableUniverse}</span>
+                      </A>
+                    </li>
+                  </ul>
+                )}
               </li>
               <li>
                 <A

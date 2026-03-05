@@ -11,7 +11,10 @@ import { Axiom } from './pages/Axiom'
 import { Axiomaticity } from './pages/Axiomaticity'
 import { AxiomaticSystem } from './pages/AxiomaticSystem'
 import { SpaceCalibration } from './pages/SpaceCalibration'
-import { GalaxyCalibration } from './pages/GalaxyCalibration'
+import { CosmoCalibration } from './pages/CosmoCalibration'
+import { UniverseGeometryCalibration } from './pages/UniverseGeometryCalibration'
+import { TheoreticalMaxExtentCalibration } from './pages/TheoreticalMaxExtentCalibration'
+import { ObservableUniverseCalibration } from './pages/ObservableUniverseCalibration'
 import { SolarCalibration } from './pages/SolarCalibration'
 import { PlanetCalibration } from './pages/PlanetCalibration'
 import { CivilCalibration } from './pages/CivilCalibration'
@@ -70,7 +73,10 @@ export default function App() {
       <Route path="/axiomaticity" component={Axiomaticity} />
       <Route path="/axiomatic-system" component={AxiomaticSystem} />
       <Route path="/calibration/space" component={SpaceCalibration} />
-      <Route path="/calibration/galaxy" component={GalaxyCalibration} />
+      <Route path="/calibration/cosmo" component={CosmoCalibration} />
+      <Route path="/calibration/universe-geometry" component={UniverseGeometryCalibration} />
+      <Route path="/calibration/theoretical-max-extent" component={TheoreticalMaxExtentCalibration} />
+      <Route path="/calibration/observable-universe" component={ObservableUniverseCalibration} />
       <Route path="/calibration/solar" component={SolarCalibration} />
       <Route path="/calibration/planet" component={PlanetCalibration} />
       <Route path="/calibration/civil" component={CivilCalibration} />

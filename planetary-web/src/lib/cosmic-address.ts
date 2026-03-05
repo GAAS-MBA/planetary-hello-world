@@ -1,5 +1,8 @@
 /** Cosmic address hierarchy (宇宙の住所) — largest to smallest (大きな順) */
 export const COSMIC_HIERARCHY = [
+  { level: 13, name: 'Universe geometry', nameJa: '宇宙の形状', desc: 'Flat (Ω=1), Closed (Ω>1), Open (Ω<1). CMB (Planck) suggests flat to ~0.2% precision. Choice constrains theoretical max extent.' },
+  { level: 12, name: 'Theoretical max extent', nameJa: '理論上の最大宇宙サイズ', desc: 'Shape-dependent. Flat/Open: unbounded (possibly infinite). Closed: finite, lower bound >250× observable radius. Not directly observable.' },
+  { level: 11, name: 'Observable Universe', nameJa: '観測可能な宇宙', desc: '~46.5 Gly radius (~93 Gly diameter). Horizon set by cosmic expansion. ~2×10²⁴ stars, ~10¹¹ galaxies.' },
   { level: 10, name: 'Quipu superstructure', nameJa: 'キープ超構造', desc: '2025 report. Major axis >400 Mpc (~1.3 Gly). Mass ~2×10¹⁷ M☉. One of the largest known cosmic structures.' },
   { level: 9, name: 'Shapley Supercluster', nameJa: 'シャプレー超銀河団', desc: 'Major axis ~625 Mly (~191.5 Mpc). Center ~650 Mly. Largest mass concentration in local universe. Laniakea and neighbors may flow toward it.' },
   { level: 8, name: 'Pisces–Cetus Supercluster Complex', nameJa: 'うお座–くじら座超銀河団複合体', desc: 'Major axis ~380 Mpc (~1.24 Gly). Parent structure containing Laniakea as its inner part.' },

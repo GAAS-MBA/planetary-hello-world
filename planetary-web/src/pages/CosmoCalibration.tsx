@@ -1,16 +1,17 @@
 import { type Component } from 'solid-js'
 import { Stars, MapPin } from 'lucide-solid'
+import { A } from '@solidjs/router'
 import { copy } from '../lib/copy'
 import { COSMIC_HIERARCHY, MASSIVE_OBJECTS } from '../lib/cosmic-address'
 
 /**
- * Galaxy Calibration — Cosmic address, Laniakea, massive object tracking
+ * Cosmo Calibration — Cosmic address, Laniakea, massive object tracking
  */
-export const GalaxyCalibration: Component = () => (
+export const CosmoCalibration: Component = () => (
   <div class="space-y-6">
     <div>
-      <h1 class="font-mono text-xl font-bold text-amber-600">Galaxy Calibration</h1>
-      <p class="mt-1 text-sm text-stone-500">{copy.calibration.galaxyDesc}</p>
+      <h1 class="font-mono text-xl font-bold text-amber-600">Cosmo Calibration</h1>
+      <p class="mt-1 text-sm text-stone-500">{copy.calibration.cosmoDesc}</p>
     </div>
 
     <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
@@ -25,9 +26,24 @@ export const GalaxyCalibration: Component = () => (
         {COSMIC_HIERARCHY.map((h) => (
           <div class="flex items-start gap-3 rounded-lg border border-stone-100 p-2">
             <span class="font-mono text-xs text-amber-600">{h.level}</span>
-            <div>
+            <div class="flex-1">
               <span class="font-medium text-stone-700">{h.name}</span>
               <span class="ml-2 text-xs text-stone-500">({h.nameJa})</span>
+              {h.level === 13 && (
+                <A href="/calibration/universe-geometry" class="ml-2 text-xs font-mono text-amber-600 hover:underline">
+                  → Models
+                </A>
+              )}
+              {h.level === 12 && (
+                <A href="/calibration/theoretical-max-extent" class="ml-2 text-xs font-mono text-amber-600 hover:underline">
+                  → Prediction models
+                </A>
+              )}
+              {h.level === 11 && (
+                <A href="/calibration/observable-universe" class="ml-2 text-xs font-mono text-amber-600 hover:underline">
+                  → Models
+                </A>
+              )}
               <p class="mt-0.5 text-xs text-stone-600">{h.desc}</p>
             </div>
           </div>

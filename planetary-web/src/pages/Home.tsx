@@ -4,6 +4,7 @@ import { SingularityStates } from '../components/SingularityStates'
 import { EventHorizon } from '../components/EventHorizon'
 import { BigBangCountUpCard } from '../components/BigBangCountUpCard'
 import { OurCurrentAddress } from '../components/OurCurrentAddress'
+import { UniverseScaleCard } from '../components/UniverseScaleCard'
 import { DistanceFromEarthCard } from '../components/DistanceFromEarthCard'
 import { EventsScheduleCard } from '../components/EventsScheduleCard'
 import { copy } from '../lib/copy'
@@ -28,6 +29,7 @@ export const Home: Component = () => (
     {/* Planetary Calibration */}
     <Section title="Planetary Calibration" href="/calibrators">
       <div class="space-y-4">
+        <UniverseScaleCard showLink />
         <BigBangCountUpCard showLink />
         <OurCurrentAddress showLink />
         <DistanceFromEarthCard showLink />

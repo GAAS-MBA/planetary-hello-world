@@ -37,7 +37,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://phw.tanaakk.com/calibration/galaxy</loc>
+    <loc>https://phw.tanaakk.com/calibration/cosmo</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://phw.tanaakk.com/calibration/universe-geometry</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://phw.tanaakk.com/calibration/theoretical-max-extent</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://phw.tanaakk.com/calibration/observable-universe</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

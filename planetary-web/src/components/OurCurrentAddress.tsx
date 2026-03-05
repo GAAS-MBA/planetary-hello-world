@@ -50,8 +50,8 @@ export const OurCurrentAddress: Component<Props> = (props) => (
 
     {props.showLink && (
       <p class="mt-3">
-        <A href="/calibration/galaxy" class="text-xs font-mono text-amber-600 hover:underline">
-          → Galaxy Calibration
+        <A href="/calibration/cosmo" class="text-xs font-mono text-amber-600 hover:underline">
+          → Cosmo Calibration
         </A>
       </p>
     )}
