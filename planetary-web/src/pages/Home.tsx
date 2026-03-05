@@ -1,4 +1,5 @@
 import { type Component } from 'solid-js'
+import { A } from '@solidjs/router'
 import { SingularityStates } from '../components/SingularityStates'
 import { EventHorizon } from '../components/EventHorizon'
 import { BigBangCountUpCard } from '../components/BigBangCountUpCard'
@@ -7,35 +8,59 @@ import { DistanceFromEarthCard } from '../components/DistanceFromEarthCard'
 import { EventsScheduleCard } from '../components/EventsScheduleCard'
 import { copy } from '../lib/copy'
 
+const Section = (props: { title: string; href?: string; children: import('solid-js').JSX.Element }) => (
+  <section>
+    <h2 class="mb-4 font-mono text-sm font-medium uppercase tracking-wider text-stone-600">
+      {props.href ? (
+        <A href={props.href} class="hover:text-amber-600">
+          {props.title}
+        </A>
+      ) : (
+        props.title
+      )}
+    </h2>
+    {props.children}
+  </section>
+)
+
 export const Home: Component = () => (
   <div class="mx-auto max-w-4xl space-y-8">
-    {/* Big Bang: Days & Seconds Ago */}
-    <BigBangCountUpCard showLink />
+    {/* Planetary Calibration */}
+    <Section title="Planetary Calibration" href="/calibrators">
+      <div class="space-y-4">
+        <BigBangCountUpCard showLink />
+        <OurCurrentAddress showLink />
+        <DistanceFromEarthCard showLink />
+      </div>
+    </Section>
 
-    {/* Our current address */}
-    <OurCurrentAddress showLink />
+    {/* Planetary Cockpit */}
+    <Section title="Planetary Cockpit" href="/cockpit">
+      <EventsScheduleCard />
+    </Section>
 
-    {/* Distance from Earth */}
-    <DistanceFromEarthCard showLink />
+    {/* Planetary UI */}
+    <Section title="Planetary UI">
+      <p class="rounded-xl border border-dashed border-stone-200 bg-stone-50/50 px-4 py-6 text-center text-sm text-stone-500">
+        Coming soon.
+      </p>
+    </Section>
 
-    {/* Events Schedule */}
-    <EventsScheduleCard />
+    {/* Planetary Framework */}
+    <Section title="Planetary Framework">
+      <p class="rounded-xl border border-dashed border-stone-200 bg-stone-50/50 px-4 py-6 text-center text-sm text-stone-500">
+        Coming soon.
+      </p>
+    </Section>
 
     {/* Event Horizon: Spirit | Axiomaticity | Body */}
-    <section>
-      <h2 class="mb-4 font-mono text-sm font-medium uppercase tracking-wider text-stone-600">
-        {copy.eventHorizon}
-      </h2>
+    <Section title={copy.eventHorizon}>
       <EventHorizon />
-    </section>
+    </Section>
 
     {/* Pure Axiomaticity - 4 states */}
-    <section>
-      <h2 class="mb-4 font-mono text-sm font-medium uppercase tracking-wider text-stone-600">
-        {copy.pureAxiomaticity}
-      </h2>
+    <Section title={copy.pureAxiomaticity}>
       <SingularityStates />
-    </section>
-
-    </div>
+    </Section>
+  </div>
 )

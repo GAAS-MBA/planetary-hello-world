@@ -4,7 +4,7 @@ import { A } from '@solidjs/router'
 import { copy } from '../lib/copy'
 import scheduleData from '../lib/events-schedule-public.json'
 import eventsData from '../lib/events-public.json'
-import { isComingEvent, type ScheduleEvent } from '../lib/schedule-utils'
+import { isComingEvent, getStellarLabel, type ScheduleEvent } from '../lib/schedule-utils'
 
 const schedule = scheduleData as {
   observableStarEvents: ScheduleEvent[]
@@ -65,13 +65,14 @@ export const EventsSchedule: Component = () => {
   const comingGrav = schedule.gravitationalEvents.filter(isComing)
   const comingPlanetary = starInSeries.events.filter((e) => e.type === 'planetary' && isComing(e))
   const comingStellar = starInSeries.events.filter((e) => e.type === 'stellar' && isComing(e))
+  const stellarLabel = getStellarLabel(starInSeries.events.filter((e) => e.type === 'stellar').length)
 
   return (
     <div class="space-y-6">
       <div>
         <h1 class="font-mono text-xl font-bold text-amber-600">{copy.eventsSchedule}</h1>
         <p class="mt-1 text-sm text-stone-500">
-          Observable star events, gravitational events, planetary & stellar alignments. UUIDv4 per event.
+          Observable star events, gravitational events, planetary & stellar / massive star alignments. UUIDv4 per event.
         </p>
         <p class="mt-2">
           <A href="/events/schedule-archive" class="text-xs font-mono text-amber-600 hover:underline">
@@ -119,7 +120,7 @@ export const EventsSchedule: Component = () => {
       <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
         <h2 class="flex items-center gap-2 font-mono text-sm font-medium text-stone-700">
           <Stars size={16} />
-          Coming Schedule — Stellar alignments (恒星直列)
+          Coming Schedule — {stellarLabel}
         </h2>
         <ul class="mt-3 space-y-3 text-sm">
           {comingStellar.map((e, i) => CelestialEventCard(e, i))}

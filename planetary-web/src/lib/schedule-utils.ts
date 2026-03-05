@@ -16,6 +16,14 @@ function parseDate(dateStr: string): { year: number; month: number } | 'future' 
   return { year, month }
 }
 
+/** When stellar events are few, use this label instead of "Stellar alignments". */
+export const STELLAR_COUNT_THRESHOLD = 2
+
+/** Label for stellar-type events: "Massive Star Alignments / Collapse" when count < threshold, else "Stellar alignments". */
+export function getStellarLabel(count: number): string {
+  return count < STELLAR_COUNT_THRESHOLD ? 'Massive Star Alignments / Collapse' : 'Stellar alignments'
+}
+
 /** True if event is in the future or current month (coming schedule). */
 export function isComingEvent(dateStr: string, now: Date): boolean {
   const parsed = parseDate(dateStr)

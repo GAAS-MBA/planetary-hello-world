@@ -3,7 +3,7 @@ import { Stars, Zap } from 'lucide-solid'
 import { A } from '@solidjs/router'
 import scheduleData from '../lib/events-schedule-public.json'
 import eventsData from '../lib/events-public.json'
-import { isComingEvent, type ScheduleEvent } from '../lib/schedule-utils'
+import { isComingEvent, getStellarLabel, type ScheduleEvent } from '../lib/schedule-utils'
 
 const schedule = scheduleData as {
   observableStarEvents: ScheduleEvent[]
@@ -64,13 +64,14 @@ export const ScheduleArchive: Component = () => {
   const archivedGrav = schedule.gravitationalEvents.filter(isArchive)
   const archivedPlanetary = starInSeries.events.filter((e) => e.type === 'planetary' && isArchive(e))
   const archivedStellar = starInSeries.events.filter((e) => e.type === 'stellar' && isArchive(e))
+  const stellarLabel = getStellarLabel(starInSeries.events.filter((e) => e.type === 'stellar').length)
 
   return (
     <div class="space-y-6">
       <div>
         <h1 class="font-mono text-xl font-bold text-amber-600">Schedule Archive</h1>
         <p class="mt-1 text-sm text-stone-500">
-          Past events. Observable star events, gravitational events, planetary & stellar alignments.
+          Past events. Observable star events, gravitational events, planetary & stellar / massive star alignments.
         </p>
         <p class="mt-2">
           <A href="/events/schedule" class="text-xs font-mono text-amber-600 hover:underline">
@@ -124,14 +125,14 @@ export const ScheduleArchive: Component = () => {
       <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
         <h2 class="flex items-center gap-2 font-mono text-sm font-medium text-stone-700">
           <Stars size={16} />
-          Stellar alignments (恒星直列) — Archive
+          {stellarLabel} — Archive
         </h2>
         {archivedStellar.length > 0 ? (
           <ul class="mt-3 space-y-3 text-sm">
             {archivedStellar.map((e, i) => CelestialEventCard(e, i))}
           </ul>
         ) : (
-          <p class="mt-3 text-sm text-stone-500">No archived stellar alignments.</p>
+          <p class="mt-3 text-sm text-stone-500">No archived {stellarLabel.toLowerCase()}.</p>
         )}
       </section>
     </div>

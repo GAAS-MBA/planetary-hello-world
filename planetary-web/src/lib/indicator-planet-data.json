@@ -1,0 +1,20 @@
+{
+  "environmental": [
+    { "id": "env-temp", "label": "Mean surface temperature", "value": "288.15 K (15 °C)", "unit": "K", "si": "Kelvin (SI base)", "ref": "ISO/IEC 18025 EDCS, ISO 80000-5", "note": "Global mean. Universal for thermal habitability." },
+    { "id": "env-pressure", "label": "Mean atmospheric pressure", "value": "1013.25 hPa", "unit": "hPa", "si": "Pa (Pascal)", "ref": "ISO 2533, ISO 8756", "note": "Sea level reference. 1 atm." },
+    { "id": "env-species", "label": "Estimated species count", "value": "~8.7e6", "unit": "count", "si": "—", "ref": "ISO 17298, ISO 13208", "note": "Species (種族数). Eukaryotes. Bacteria/Archaea not fully catalogued." },
+    { "id": "env-life", "label": "Estimated life count", "value": "~1e30", "unit": "count", "si": "—", "ref": "—", "note": "Total organisms (生き物の総数). Bacteria, Archaea, Eukaryotes. Order of magnitude." },
+    { "id": "env-gravity", "label": "Surface gravity", "value": "9.80665 m/s²", "unit": "m/s²", "si": "m/s²", "ref": "SI, WGS84", "note": "1G. Skeletal support boundary." },
+    { "id": "env-o2", "label": "Atmospheric O₂", "value": "~21%", "unit": "mol%", "si": "—", "ref": "ISO 8756", "note": "Aerobic threshold for complex life." }
+  ],
+  "civil": [
+    { "id": "civ-pop", "label": "Population", "value": "~8.0e9", "unit": "count", "ref": "UN estimates", "note": "Human population (2024)." },
+    { "id": "civ-languages", "label": "Major languages", "value": "~7000", "unit": "count", "ref": "ISO 639", "note": "Living languages. ~20 with >50M speakers." },
+    { "id": "civ-currencies", "label": "Major currencies", "value": "~180", "unit": "count", "ref": "ISO 4217", "note": "Active currencies." },
+    { "id": "civ-countries", "label": "Countries (UN members)", "value": "193", "unit": "count", "ref": "UN", "note": "Sovereign states." },
+    { "id": "civ-municipalities", "label": "Municipalities (approx.)", "value": "~4e6", "unit": "count", "ref": "—", "note": "Local governments globally." },
+    { "id": "civ-assets", "label": "Total assets (base currency)", "value": "~$400T", "unit": "USD", "ref": "BIS, McKinsey", "note": "Global financial assets. Base: USD." },
+    { "id": "civ-payments", "label": "Total payments (volume)", "value": "~3.4e12", "unit": "transactions/yr", "ref": "McKinsey", "note": "Annual payment transactions (2023)." },
+    { "id": "civ-amount", "label": "Total amount (nominal)", "value": "~$100T", "unit": "USD", "ref": "IMF, World Bank", "note": "World GDP (nominal)." }
+  ]
+}

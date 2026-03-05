@@ -50,6 +50,7 @@ export const copy = {
   journeyMap: 'Journey',
   genesisTrigger: 'Genesis Trigger',
   tutorials: 'Tutorials',
+  tutorialSpecification: 'Specification',
   tutorialStartupSequence: 'Startup Sequence',
   tutorialRecommendedTraining: 'Recommended Training',
   tutorialErrorHandling: 'Error Handling',
@@ -58,4 +59,7 @@ export const copy = {
   scheduleArchive: 'Schedule Archive',
   calibrators: 'Calibrators',
   calibratorsCoordinates: 'Coordinates',
+  cockpit: 'Cockpit',
+  indicatorPlanet: 'Indicator Planet',
+  library: 'Library',
 } as const

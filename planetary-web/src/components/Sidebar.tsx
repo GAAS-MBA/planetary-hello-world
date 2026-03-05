@@ -89,6 +89,26 @@ export const Sidebar: Component<SidebarProps> = (props) => {
             </ul>
           </div>
 
+          {/* Cockpit */}
+          <div class="mb-4">
+            <p class="mb-2 px-2 text-[10px] font-medium uppercase tracking-wider text-stone-400">
+              Cockpit
+            </p>
+            <ul class="space-y-1">
+              <li>
+                <A
+                  href="/cockpit"
+                  onClick={props.onClose}
+                  class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
+                  activeClass="bg-stone-100 text-amber-600"
+                >
+                  <Gauge size={18} class="shrink-0" />
+                  <span>{copy.cockpit}</span>
+                </A>
+              </li>
+            </ul>
+          </div>
+
           {/* Calibrators */}
           <div class="mb-4">
             <p class="mb-2 px-2 text-[10px] font-medium uppercase tracking-wider text-stone-400">
@@ -104,6 +124,26 @@ export const Sidebar: Component<SidebarProps> = (props) => {
                 >
                   <Gauge size={18} class="shrink-0" />
                   <span>{copy.calibrators}</span>
+                </A>
+              </li>
+            </ul>
+          </div>
+
+          {/* Library */}
+          <div class="mb-4">
+            <p class="mb-2 px-2 text-[10px] font-medium uppercase tracking-wider text-stone-400">
+              Library
+            </p>
+            <ul class="space-y-1">
+              <li>
+                <A
+                  href="/library"
+                  onClick={props.onClose}
+                  class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
+                  activeClass="bg-stone-100 text-amber-600"
+                >
+                  <BookOpen size={18} class="shrink-0" />
+                  <span>{copy.library}</span>
                 </A>
               </li>
             </ul>
@@ -263,6 +303,28 @@ export const Sidebar: Component<SidebarProps> = (props) => {
               {copy.tutorials}
             </p>
             <ul class="space-y-1">
+              <li>
+                <A
+                  href="/tutorials/specification/classification"
+                  onClick={props.onClose}
+                  class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
+                  activeClass="bg-stone-100 text-amber-600"
+                >
+                  <FileText size={18} class="shrink-0" />
+                  <span>Classification (科目などの分類)</span>
+                </A>
+              </li>
+              <li>
+                <A
+                  href="/tutorials/specification"
+                  onClick={props.onClose}
+                  class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-stone-700 transition hover:bg-stone-100 hover:text-amber-600"
+                  activeClass="bg-stone-100 text-amber-600"
+                >
+                  <FileText size={18} class="shrink-0" />
+                  <span>{copy.tutorialSpecification}</span>
+                </A>
+              </li>
               <li>
                 <A
                   href="/tutorials/startup-sequence"

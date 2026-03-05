@@ -22,9 +22,21 @@ import { GenesisTrigger } from './pages/GenesisTrigger'
 import { TutorialStartupSequence } from './pages/TutorialStartupSequence'
 import { TutorialRecommendedTraining } from './pages/TutorialRecommendedTraining'
 import { TutorialErrorHandling } from './pages/TutorialErrorHandling'
+import { TutorialSpecification } from './pages/TutorialSpecification'
+import { TutorialSpecificationClassification } from './pages/tutorials/TutorialSpecificationClassification'
 import { EventsSchedule } from './pages/EventsSchedule'
 import { ScheduleArchive } from './pages/ScheduleArchive'
 import { Calibrators } from './pages/Calibrators'
+import { Cockpit } from './pages/Cockpit'
+import { CockpitIndicatorEnvironmental } from './pages/cockpit/CockpitIndicatorEnvironmental'
+import { CockpitIndicatorCivil } from './pages/cockpit/CockpitIndicatorCivil'
+import { CockpitControllingModel } from './pages/cockpit/CockpitControllingModel'
+import { CockpitVersion } from './pages/cockpit/CockpitVersion'
+import { Library } from './pages/Library'
+import { LibraryElements } from './pages/library/LibraryElements'
+import { LibraryDynamics } from './pages/library/LibraryDynamics'
+import { LibrarySpeciesLandscape } from './pages/library/LibrarySpeciesLandscape'
+import { LibrarySpeciesTaxonomy } from './pages/library/LibrarySpeciesTaxonomy'
 
 const AppLayout: Component<RouteSectionProps> = (props) => {
   const [sidebarOpen, setSidebarOpen] = createSignal(false)
@@ -64,12 +76,24 @@ export default function App() {
       <Route path="/calibration/cosmic-event" component={CosmicEventCalibration} />
       <Route path="/journey" component={JourneyMap} />
       <Route path="/genesis-trigger" component={GenesisTrigger} />
+      <Route path="/tutorials/specification" component={TutorialSpecification} />
+      <Route path="/tutorials/specification/classification" component={TutorialSpecificationClassification} />
       <Route path="/tutorials/startup-sequence" component={TutorialStartupSequence} />
       <Route path="/tutorials/recommended-training" component={TutorialRecommendedTraining} />
       <Route path="/tutorials/error-handling" component={TutorialErrorHandling} />
       <Route path="/events/schedule" component={EventsSchedule} />
       <Route path="/events/schedule-archive" component={ScheduleArchive} />
       <Route path="/calibrators" component={Calibrators} />
+      <Route path="/cockpit" component={Cockpit} />
+      <Route path="/cockpit/indicator-environmental" component={CockpitIndicatorEnvironmental} />
+      <Route path="/cockpit/indicator-civil" component={CockpitIndicatorCivil} />
+      <Route path="/cockpit/controlling-model" component={CockpitControllingModel} />
+      <Route path="/cockpit/version" component={CockpitVersion} />
+      <Route path="/library" component={Library} />
+      <Route path="/library/elements" component={LibraryElements} />
+      <Route path="/library/dynamics" component={LibraryDynamics} />
+      <Route path="/library/species-landscape" component={LibrarySpeciesLandscape} />
+      <Route path="/library/species-taxonomy" component={LibrarySpeciesTaxonomy} />
     </Router>
   )
 }
