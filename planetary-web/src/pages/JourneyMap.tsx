@@ -66,8 +66,8 @@ export const JourneyMap: Component = () => {
         : `Commit: ${p.commitHash}`
       marker.bindTooltip(
         p.address
-          ? `${p.address}<br>${p.id}<br>Version: v${p.version} · ${commitInfo}`
-          : `${p.id}<br>Version: v${p.version} · ${commitInfo}`,
+          ? `${p.address}<br>${p.id}<br>Version: vᵢ${p.version} · ${commitInfo}`
+          : `${p.id}<br>Version: vᵢ${p.version} · ${commitInfo}`,
         { permanent: false }
       )
       marker.addTo(markersLayer!)

@@ -445,7 +445,7 @@ export const Sidebar: Component<SidebarProps> = (props) => {
           </div>
         </nav>
 
-        {/* Version display - Architect: v1.0.x-commit hash + encrypted location/time */}
+        {/* Version display - 複素空間表記: vᵢ1.0.x-commit + encrypted location/time */}
         <div class="border-t border-stone-200 p-4">
           <p class="font-mono text-xs text-stone-500">
             {VERSION_DISPLAY}

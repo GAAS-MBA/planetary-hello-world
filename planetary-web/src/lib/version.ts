@@ -1,6 +1,6 @@
 /**
  * Planetary Hello World - Version & Axiomatic Identity
- * v1.0.x-commit hash format per Architect specification
+ * 複素空間表記: vᵢ1.0.x-commit hash (subscript i = imaginary/complex space)
  * When x or x+1 changes, both receive UUIDv4
  *
  * Update metadata: 位置・時刻は暗号化され version と共に格納（外部非公開）
@@ -20,7 +20,8 @@ export interface UpdateMetadataStored {
 export const updateMetadata: UpdateMetadataStored = updateMetaJson as UpdateMetadataStored
 export const COMMIT_HASH = typeof __COMMIT_HASH__ !== 'undefined' ? __COMMIT_HASH__ : 'dev'
 export const VERSION = updateMetadata.version
-export const VERSION_DISPLAY = `v${VERSION}-${COMMIT_HASH}`
+/** 複素空間表記: vᵢ1.0.x-commit (subscript i = imaginary/complex) */
+export const VERSION_DISPLAY = `vᵢ${VERSION}-${COMMIT_HASH}`
 
 /** Generate UUIDv4 for Axiomatic boundary events (x, x+1 transitions) */
 export const generateAxiomaticId = (): string => uuidv4()

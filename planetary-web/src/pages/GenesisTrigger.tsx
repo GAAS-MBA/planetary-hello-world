@@ -125,7 +125,7 @@ export const GenesisTrigger: Component = () => {
                     </div>
                   </div>
                   <div class="mt-1 text-xs text-stone-500 font-mono">
-                    Version: v{p.version} · Commit: {p.commitHash}
+                    Version: vᵢ{p.version} · Commit: {p.commitHash}
                   </div>
                 </li>
               )

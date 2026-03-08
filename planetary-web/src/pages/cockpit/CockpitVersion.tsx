@@ -26,7 +26,7 @@ const versionEntries = journey.entries.map((e) => ({
   id: e.id,
   utc: toUtcIso(e.timestamp),
   ver: e.version,
-  summary: summaries[e.version] ?? `v${e.version}`,
+  summary: summaries[e.version] ?? `vᵢ${e.version}`,
 }))
 
 export const CockpitVersion: Component = () => (
@@ -67,7 +67,7 @@ export const CockpitVersion: Component = () => (
               <tr class="border-b border-stone-100">
                 <td class="py-2 font-mono text-[10px] text-stone-500 break-all">{v.id}</td>
                 <td class="py-2 font-mono text-xs">{v.utc}</td>
-                <td class="py-2 font-mono text-amber-600">v{v.ver}</td>
+                <td class="py-2 font-mono text-amber-600">vᵢ{v.ver}</td>
                 <td class="py-2 text-stone-600">{v.summary}</td>
               </tr>
             ))}

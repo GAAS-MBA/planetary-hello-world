@@ -37,7 +37,7 @@ export const Architect: Component = () => (
       <ul class="mt-3 list-inside list-disc space-y-1 text-sm text-stone-600">
         <li>Planetary Hello World records v</li>
         <li>Initial v is 1.0.0</li>
-        <li>Version displayed as v1.0.x-commit hash in sidebar</li>
+        <li>Version displayed as vᵢ1.0.x-commit hash (複素空間表記) in sidebar</li>
         <li>When x or x+1 changes, both receive UUIDv4</li>
       </ul>
     </section>

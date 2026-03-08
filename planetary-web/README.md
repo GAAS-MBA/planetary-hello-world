@@ -16,7 +16,7 @@
 ## 構成
 
 - レスポンシブ **ヘッダー** + **サイドバー**
-- バージョン表示: `v1.0.x-commit hash`（サイドバー下部）
+- バージョン表示: `vᵢ1.0.x-commit hash`（複素空間表記、サイドバー下部）
 - Duality: 日本語 / English 切替
 - Pure Axiomaticity: x=1, x=0, x=1∩x=0, ¬(x=1∩x=0) の4状態
 - Event Horizon: Spirit | Axiomaticity | Body
