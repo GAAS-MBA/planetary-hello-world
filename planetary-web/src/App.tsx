@@ -18,6 +18,7 @@ import { ObservableUniverseCalibration } from './pages/ObservableUniverseCalibra
 import { SolarCalibration } from './pages/SolarCalibration'
 import { PlanetCalibration } from './pages/PlanetCalibration'
 import { CivilCalibration } from './pages/CivilCalibration'
+import { HumanSpecCalibration } from './pages/HumanSpecCalibration'
 import { TimeOrbitCalibration } from './pages/TimeOrbitCalibration'
 import { CosmicEventCalibration } from './pages/CosmicEventCalibration'
 import { JourneyMap } from './pages/JourneyMap'
@@ -80,6 +81,7 @@ export default function App() {
       <Route path="/calibration/solar" component={SolarCalibration} />
       <Route path="/calibration/planet" component={PlanetCalibration} />
       <Route path="/calibration/civil" component={CivilCalibration} />
+      <Route path="/calibration/human-spec" component={HumanSpecCalibration} />
       <Route path="/calibration/orbit" component={TimeOrbitCalibration} />
       <Route path="/calibration/cosmic-event" component={CosmicEventCalibration} />
       <Route path="/journey" component={JourneyMap} />

@@ -17,6 +17,7 @@ export const ROUTES: { path: string; title: string }[] = [
   { path: '/calibration/solar', title: 'Solar Calibration' },
   { path: '/calibration/planet', title: 'Planet Calibration' },
   { path: '/calibration/civil', title: 'Civil Calibration' },
+  { path: '/calibration/human-spec', title: 'Human Spec' },
   { path: '/calibration/orbit', title: 'Time/Orbit Calibration' },
   { path: '/calibration/cosmic-event', title: 'Cosmic Event' },
   { path: '/journey', title: 'Journey' },

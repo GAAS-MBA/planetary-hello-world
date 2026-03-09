@@ -40,6 +40,8 @@ export const copy = {
     planetDesc: 'Planetary calibration',
     civil: 'Civil',
     civilDesc: 'ISO year month day hour minute second',
+    humanSpec: 'Human Spec',
+    humanSpecDesc: '計算資源のベース: 細胞数、原子数、クオーク数、アンチクオークのペア',
     orbit: 'Orbit',
     timeOrbit: 'Time/Orbit Calibration',
     cosmicEvent: 'Cosmic Event',
