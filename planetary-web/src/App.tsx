@@ -24,7 +24,8 @@ import { CosmicEventCalibration } from './pages/CosmicEventCalibration'
 import { JourneyMap } from './pages/JourneyMap'
 import { GenesisTrigger } from './pages/GenesisTrigger'
 import { TutorialStartupSequence } from './pages/TutorialStartupSequence'
-import { TutorialRecommendedTraining } from './pages/TutorialRecommendedTraining'
+import { Training } from './pages/Training'
+import { TrainingDetail } from './pages/training/TrainingDetail'
 import { TutorialErrorHandling } from './pages/TutorialErrorHandling'
 import { TutorialSpecification } from './pages/TutorialSpecification'
 import { TutorialSpecificationClassification } from './pages/tutorials/TutorialSpecificationClassification'
@@ -89,7 +90,8 @@ export default function App() {
       <Route path="/tutorials/specification" component={TutorialSpecification} />
       <Route path="/tutorials/specification/classification" component={TutorialSpecificationClassification} />
       <Route path="/tutorials/startup-sequence" component={TutorialStartupSequence} />
-      <Route path="/tutorials/recommended-training" component={TutorialRecommendedTraining} />
+      <Route path="/training" component={Training} />
+      <Route path="/training/:slug" component={TrainingDetail} />
       <Route path="/tutorials/error-handling" component={TutorialErrorHandling} />
       <Route path="/events/schedule" component={EventsSchedule} />
       <Route path="/events/schedule-archive" component={ScheduleArchive} />

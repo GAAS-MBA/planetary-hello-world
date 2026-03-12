@@ -2,17 +2,17 @@ import { type Component } from 'solid-js'
 import { Dumbbell } from 'lucide-solid'
 
 /**
- * Recommended Training — 30-Minute Punch Protocol
+ * Training — 30-Minute Punch Protocol
  * Most economical leverage: human peak output in 30 minutes
  */
-export const TutorialRecommendedTraining: Component = () => (
+export const TrainingPunchProtocol: Component = () => (
   <div class="space-y-6">
     <div>
       <h1 class="flex items-center gap-2 font-mono text-xl font-bold text-amber-600">
         <Dumbbell size={24} />
-        Recommended Training
+        30-Minute Punch Protocol
       </h1>
-      <p class="mt-1 text-sm text-stone-500">30-Minute Punch Protocol</p>
+      <p class="mt-1 text-sm text-stone-500">Human peak benchmark in 30 minutes</p>
     </div>
 
     <section class="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">

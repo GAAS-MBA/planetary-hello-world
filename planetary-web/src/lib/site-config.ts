@@ -1,7 +1,14 @@
+import { TRAINING_ITEMS } from './training-config'
+
 /**
  * Site configuration for SEO, sitemap, canonical URLs
  */
 export const SITE_URL = 'https://phw.tanaakk.com'
+
+const TRAINING_ROUTES = TRAINING_ITEMS.map((t) => ({
+  path: `/training/${t.slug}`,
+  title: t.title,
+}))
 
 export const ROUTES: { path: string; title: string }[] = [
   { path: '/', title: 'Planetary Hello World' },
@@ -25,7 +32,8 @@ export const ROUTES: { path: string; title: string }[] = [
   { path: '/tutorials/specification', title: 'Specification' },
   { path: '/tutorials/specification/classification', title: 'Classification' },
   { path: '/tutorials/startup-sequence', title: 'Startup Sequence' },
-  { path: '/tutorials/recommended-training', title: 'Recommended Training' },
+  { path: '/training', title: 'Training' },
+  ...TRAINING_ROUTES,
   { path: '/tutorials/error-handling', title: 'Error Handling' },
   { path: '/events/schedule', title: 'Events Schedule' },
   { path: '/events/schedule-archive', title: 'Schedule Archive' },

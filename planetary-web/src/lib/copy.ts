@@ -60,7 +60,7 @@ export const copy = {
   tutorials: 'Tutorials',
   tutorialSpecification: 'Specification',
   tutorialStartupSequence: 'Startup Sequence',
-  tutorialRecommendedTraining: 'Recommended Training',
+  training: 'Training',
   tutorialErrorHandling: 'Error Handling',
   events: 'Events',
   eventsSchedule: 'Events Schedule',
