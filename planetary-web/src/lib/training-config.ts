@@ -34,6 +34,18 @@ export const TRAINING_ITEMS: TrainingItem[] = [
     description: 'サッカーのボールコントロールと事業経営を同じ「動的システムの制御」として捉える。経営の身体化。',
     keywords: ['経営の身体化', '経営', '事業', '出社', '予測', 'ROIC', 'Operating Leverage', 'ノールック', '動的システム', '重力', '軌道'],
   },
+  {
+    slug: 'object-space-embodiment',
+    title: '対象、空間の身体化',
+    description: '対象（物体）と空間を身体化する。身体図式の拡張、感覚のマッピング、脳内シミュレーション。',
+    keywords: ['対象', '空間', '身体化', '身体図式', '感覚', 'マッピング', 'embodiment'],
+  },
+  {
+    slug: 'soccer-kolmogorov-embodiment',
+    title: 'サッカーと身体化の競争',
+    description: 'コルモゴロフ複雑性から見るサッカー。ゴールまでの身体的計算量を圧縮する。身体化の範囲をどこまで広げられるか。',
+    keywords: ['サッカー', 'コルモゴロフ', '複雑性', '身体化', 'メッシ', '集団的身体化', 'アフォーダンス'],
+  },
 ]
 
 export const getTrainingBySlug = (slug: string): TrainingItem | undefined =>

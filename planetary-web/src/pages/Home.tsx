@@ -26,6 +26,11 @@ const Section = (props: { title: string; href?: string; children: import('solid-
 
 export const Home: Component = () => (
   <div class="mx-auto max-w-4xl space-y-8">
+    {/* Comma ⊃ Recovery ⊃ Genesis ⊃ Space ⊃ Time */}
+    <p class="font-mono text-sm font-medium tracking-wider text-amber-600">
+      Comma ⊃ Recovery ⊃ Genesis ⊃ Space ⊃ Time
+    </p>
+
     {/* Planetary Calibration */}
     <Section title="Planetary Calibration" href="/calibrators">
       <div class="space-y-4">

@@ -5,12 +5,16 @@ import { TrainingPunchProtocol } from './TrainingPunchProtocol'
 import { TrainingFootbagSoccerBall } from './TrainingFootbagSoccerBall'
 import { TrainingManifoldAxiomaticitySports } from './TrainingManifoldAxiomaticitySports'
 import { TrainingNoLookManagement } from './TrainingNoLookManagement'
+import { TrainingObjectSpaceEmbodiment } from './TrainingObjectSpaceEmbodiment'
+import { TrainingSoccerKolmogorovEmbodiment } from './TrainingSoccerKolmogorovEmbodiment'
 
 const SLUG_TO_COMPONENT: Record<string, Component> = {
   '30-minute-punch-protocol': TrainingPunchProtocol,
   'footbag-soccer-ball': TrainingFootbagSoccerBall,
   'manifold-axiomaticity-sports': TrainingManifoldAxiomaticitySports,
   'no-look-management': TrainingNoLookManagement,
+  'object-space-embodiment': TrainingObjectSpaceEmbodiment,
+  'soccer-kolmogorov-embodiment': TrainingSoccerKolmogorovEmbodiment,
 }
 
 export const TrainingDetail: Component = () => {
