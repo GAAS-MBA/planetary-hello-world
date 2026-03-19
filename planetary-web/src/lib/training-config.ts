@@ -46,6 +46,31 @@ export const TRAINING_ITEMS: TrainingItem[] = [
     description: 'コルモゴロフ複雑性から見るサッカー。ゴールまでの身体的計算量を圧縮する。身体化の範囲をどこまで広げられるか。',
     keywords: ['サッカー', 'コルモゴロフ', '複雑性', '身体化', 'メッシ', '集団的身体化', 'アフォーダンス'],
   },
+  {
+    slug: 'brain-boredom-wandering',
+    title: '脳はすぐ飽きる',
+    description:
+      '運動・仕事・パチンコでもあくび前がやめ時。余波で稼ぐ組織へ委譲し配当。飽きたら新ゲームを作りに行く——引き際はあまりに早い。',
+    keywords: [
+      '飽きる',
+      '脳',
+      'ランニング',
+      '懸垂',
+      '撤退',
+      '放浪',
+      '反復',
+      '負け癖',
+      'トレーニング',
+      'boredom',
+      '仕事',
+      'パチンコ',
+      'あくび',
+      '委譲',
+      '配当',
+      '余波',
+      'ゲーム',
+    ],
+  },
 ]
 
 export const getTrainingBySlug = (slug: string): TrainingItem | undefined =>
